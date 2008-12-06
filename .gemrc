@@ -1,0 +1,3 @@
+---
+:benchmark: false
+gem: --no-rdoc

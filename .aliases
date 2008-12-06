@@ -1,0 +1,42 @@
+#!/bin/zsh
+
+# colors
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# git
+alias ga='git add'
+alias gap='git add --patch'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias gco='git checkout'
+alias gd='git diff'
+alias gl='git pull'
+alias gp='git push'
+alias gst='git status'
+# git-extras
+alias gpc='git cush'
+alias nvm='git nvm'
+alias gt='git track'
+
+# save some typing..
+alias c='cd'
+alias l='ls --color'
+alias g='apt-get'
+alias rmr='rm -r'
+alias ge='gedit'
+alias untgz='tar -zxvf'
+alias untbz='tar -jxvf'
+alias iwcfg='iwconfig'
+alias ifcfg='ifconfig'
+
+# emacs
+alias e='emacs'
+
+# coding
+alias rb='ruby'
+alias pl='perl'
+alias py='python'

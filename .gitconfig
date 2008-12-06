@@ -1,0 +1,15 @@
+[user]
+	name = Hans Engel
+	email = engel@engel.uk.to
+[apply]
+	whitespace = nowarn
+[alias]
+	co = checkout
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	excludesfile = ~/.gitignore
+[mirror]
+	summary = true
