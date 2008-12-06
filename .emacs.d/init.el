@@ -22,3 +22,6 @@
 
 ; magit
 (load-file "~/.emacs.d/vendor/magit.elc")
+
+; no toolbar
+(custom-set-variables '(tool-bar-mode nil))
