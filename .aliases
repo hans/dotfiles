@@ -24,7 +24,6 @@ alias gt='git track'
 
 # save some typing..
 alias c='cd'
-alias l='ls --color'
 alias g='apt-get'
 alias rmr='rm -r'
 alias ge='gedit'
@@ -32,6 +31,13 @@ alias untgz='tar -zxvf'
 alias untbz='tar -jxvf'
 alias iwcfg='iwconfig'
 alias ifcfg='ifconfig'
+
+# ls (need to define differently for OSX)
+if [ -e "/Users" ]; then
+	alias l='ls -G'
+else
+	alias l='ls --color'
+fi
 
 # emacs
 alias e='emacs'
