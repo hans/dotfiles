@@ -1,5 +1,6 @@
 ; Syntax highlighting
 (require 'font-lock)
+(global-font-lock-mode t)
 
 ; TextMate Minor Mode
 (add-to-list 'load-path "~/.emacs.d/vendor/textmate.el")
