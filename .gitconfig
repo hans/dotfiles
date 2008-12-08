@@ -11,5 +11,6 @@
 	branch = auto
 [core]
 	excludesfile = ~/.gitignore
+	editor = vim
 [mirror]
 	summary = true
