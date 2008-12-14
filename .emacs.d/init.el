@@ -26,3 +26,6 @@
 
 ; no toolbar
 (custom-set-variables '(tool-bar-mode nil))
+
+; auto-indent
+(global-set-key [return] 'newline-and-indent)
