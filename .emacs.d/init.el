@@ -27,13 +27,16 @@
 ; no toolbar
 (custom-set-variables '(tool-bar-mode nil))
 
+; auto-indent
+(global-set-key [return] 'newline-and-indent)
+
 ; ---
 ; extra modes that weren't installed by default (grr)
 
 ; ruby
 (autoload 'ruby-mode "ruby-mode" "Major mode for editing ruby scripts." t)
-(setq auto-mode-alist  (cons '(".rb$" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist  (cons '(".rhtml$" . html-mode) auto-mode-alist))
+(setq auto-mode-alist  (cons '("\\.rb$" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist  (cons '("\\.rhtml$" . html-mode) auto-mode-alist))
 
 ; php
 (autoload 'php-mode "php-mode" "Major mode for editing PHP scripts." t)
