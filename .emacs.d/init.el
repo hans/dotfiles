@@ -25,7 +25,7 @@
 (load-file "~/.emacs.d/vendor/magit.elc")
 
 ; no toolbar
-(custom-set-variables '(tool-bar-mode nil))
+(custom-set-variables '(tool-bar-mode nil) '(inhibit-startup-screen t))
 
 ; auto-indent
 (global-set-key [return] 'newline-and-indent)
