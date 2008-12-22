@@ -29,3 +29,6 @@
 
 ; auto-indent
 (global-set-key [return] 'newline-and-indent)
+(defun set-minibuffer-newline ()
+  (local-set-key [return] 'minibuffer-complete-and-exit))
+(add-hook 'minibuffer-setup-hook 'set-minibuffer-newline)
