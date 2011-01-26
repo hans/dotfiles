@@ -23,11 +23,14 @@ alias nvm='git nvm'
 alias gt='git track'
 
 # save some typing..
+alias s='sudo'
 alias c='cd'
 alias g='apt-get'
 alias rmr='rm -r'
 alias ge='gedit'
+alias tgz='tar -zcvf'
 alias untgz='tar -zxvf'
+alias tbz='tar -jczf'
 alias untbz='tar -jxvf'
 alias iwcfg='iwconfig'
 alias ifcfg='ifconfig'
@@ -35,12 +38,17 @@ alias ifcfg='ifconfig'
 # ls (need to define differently for OSX)
 if [ -e "/Users" ]; then
 	alias l='ls -G'
+	alias la='ls -Ga'
+	alias ll='ls -lh'
 else
 	alias l='ls --color'
+	alias la='ls --color -a'
+	alias ll='ls --color -lh'
 fi
 
-# emacs
+# editors
 alias e='emacs'
+alias v='vim'
 
 # coding
 alias rb='ruby'
