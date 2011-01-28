@@ -1,0 +1,21 @@
+[submodule "emacs.d/vendor/color-theme"]
+	path = emacs.d/vendor/color-theme
+	url = https://github.com/emacsmirror/color-theme.git
+[submodule "emacs.d/vendor/filladapt"]
+	path = emacs.d/vendor/filladapt
+	url = https://github.com/emacsmirror/filladapt.git
+[submodule "emacs.d/vendor/magit"]
+	path = emacs.d/vendor/magit
+	url = https://github.com/philjackson/magit.git
+[submodule "emacs.d/vendor/markdown-mode"]
+	path = emacs.d/vendor/markdown-mode
+	url = https://github.com/defunkt/markdown-mode.git
+[submodule "emacs.d/vendor/yaml-mode"]
+	path = emacs.d/vendor/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode.git
+[submodule "emacs.d/vendor/yasnippet"]
+	path = emacs.d/vendor/yasnippet
+	url = https://github.com/emacsmirror/yasnippet.git
+[submodule "emacs.d/vendor/full-ack"]
+	path = emacs.d/vendor/full-ack
+	url = https://github.com/nschum/full-ack.git
