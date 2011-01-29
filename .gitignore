@@ -1,2 +1,5 @@
 emacs.d/auto-save-list/*
 !emacs.d/auto-save-list/empty
+
+emacs.d/backups/*
+!emacs.d/backups/empty
