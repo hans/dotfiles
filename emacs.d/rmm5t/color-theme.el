@@ -1,8 +1,8 @@
 ;;; Pretty colors
 
 (color-theme-initialize)
-(vendor 'color-theme-twilight)
-(color-theme-twilight)
+(vendor 'color-theme-railscasts)
+(color-theme-railscasts)
 
 ;; (vendor 'color-theme-arjen)
 ;; (color-theme-arjen)
