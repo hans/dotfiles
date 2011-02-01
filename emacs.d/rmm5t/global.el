@@ -54,5 +54,8 @@
 (setq ispell-list-command "list")
 (setq ispell-extra-args '("--sug-mode=ultra"))
 
+;; Hide the menu bar
+(menu-bar-mode 0)
+
 ;; zap-up-to-char, forward-to-word, backward-to-word, etc
 (require 'misc)
