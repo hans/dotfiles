@@ -8,6 +8,8 @@ autoload promptinit						# Walters zsh prompt
 promptinit							# user@host> ... /some/pwd
 prompt walters
 
+export PROMPT=" ⚛   "						# atom-symbol prompt to mix with Walters' PWD display on the right
+
 autoload -Uz compinit						# tab completion
 compinit
 
