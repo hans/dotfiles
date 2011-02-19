@@ -11,7 +11,7 @@ task :install do
 	next if file =~ /install/
 	target = File.join home, ".#{file}"
 	source = File.expand_path file
-	`ln -s #{source} #{target}` unless File.exists?(source)
+	`ln -s #{source} #{target}` unless File.exists?(target)
     end
 end
 
