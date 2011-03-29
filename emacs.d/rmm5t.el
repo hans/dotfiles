@@ -28,5 +28,6 @@
 (vendor 'markdown-mode 'markdown-mode)
 (vendor 'csv-mode      'csv-mode)
 (vendor 'yaml-mode     'yaml-mode)
+(vendor 'coffee-mode)
 (vendor 'yasnippet)
 (vendor 'mode-line-bell)
