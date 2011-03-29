@@ -19,3 +19,6 @@
 [submodule "emacs.d/vendor/full-ack"]
 	path = emacs.d/vendor/full-ack
 	url = https://github.com/nschum/full-ack.git
+[submodule "emacs.d/vendor/color-theme-twilight"]
+	path = emacs.d/vendor/color-theme-twilight
+	url = https://github.com/crafterm/twilight-emacs.git
