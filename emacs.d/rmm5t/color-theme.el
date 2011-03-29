@@ -1,6 +1,10 @@
 ;;; Pretty colors
 
 (color-theme-initialize)
+
+(setq color-theme-is-global t)
+(setq color-theme-is-cumulative t)
+
 (vendor 'color-theme-railscasts)
 (color-theme-railscasts)
 
