@@ -29,6 +29,5 @@
 (add-to-list 'auto-mode-alist '("sake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("god$" . ruby-mode))
-
-
-
+(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
