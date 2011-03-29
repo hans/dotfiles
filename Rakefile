@@ -8,10 +8,11 @@ task :install do
     home = File.expand_path('~')
 
     Dir['*'].each do |file|
-	next if file =~ /install/
-	target = File.join(home, ".#{file}"
+	next if file =~ /install/ or file == 'Rakefile' or file == 'README.markdown'
+	target = File.join home, ".#{file}"
 	source = File.expand_path file
-	`ln -s #{source} #{target}` unless File.exists?(source)
+	puts "#{source} -> #{target}"
+	`ln -s #{source} #{target}` unless File.exists?(target)
     end
 end
 
