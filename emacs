@@ -1,6 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d")
 
-(load "rmm5t")
+(load "init")
 
 ;; Enable a backtrace when problems occur
 ;; (setq debug-on-error t)

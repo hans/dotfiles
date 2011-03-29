@@ -7,7 +7,7 @@
   (let* ((file (symbol-name library))
          (normal (concat "~/.emacs.d/vendor/" file))
          (suffix (concat normal ".el"))
-         (personal (concat "~/.emacs.d/rmm5t/" file))
+         (personal (concat "~/.emacs.d/scripts/" file))
 	 (found nil))
     (cond
      ((file-directory-p normal) (add-to-list 'load-path normal) (set 'found t))
