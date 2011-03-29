@@ -3,3 +3,5 @@ emacs.d/auto-save-list/*
 
 emacs.d/backups/*
 !emacs.d/backups/empty
+
+zsh/cache
