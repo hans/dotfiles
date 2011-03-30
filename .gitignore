@@ -4,4 +4,6 @@ emacs.d/auto-save-list/*
 emacs.d/backups/*
 !emacs.d/backups/empty
 
+emacs.d/tramp
+
 zsh/cache
