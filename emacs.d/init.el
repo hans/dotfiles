@@ -18,7 +18,7 @@
 (load "scripts/dired")
 (load "scripts/recentf")
 (load "scripts/rectangle")
-(load "scripts/flymake")
+;(load "scripts/flymake")
 (load "scripts/javascript")
 
 (vendor 'color-theme)
@@ -29,5 +29,7 @@
 (vendor 'csv-mode      'csv-mode)
 (vendor 'yaml-mode     'yaml-mode)
 (vendor 'coffee-mode)
+(vendor 'php-mode)
+(vendor 'haskell-mode  'haskell-mode)
 (vendor 'yasnippet)
 (vendor 'mode-line-bell)
