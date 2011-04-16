@@ -8,6 +8,19 @@
 (when (boundp 'mouse-wheel-scroll-amount)
   (setq mouse-wheel-scroll-amount '(0.01)))
 
+;; Copy and paste to Mac clipboard when copying / yanking
+;; http://www.lingotrek.com/2010/12/integrate-emacs-with-mac-os-x-clipboard.html
+(defun mac-copy ()
+  (shell-command-to-string "pbpaste"))
+(defun mac-paste (text &optional push)
+  (let ((process-connection-type nil))
+    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+      (process-send-string proc text)
+      (process-send-eof proc))))
+
+(setq interprogram-cut-function 'mac-paste)
+(setq interprogram-paste-function 'mac-copy)
+
 ;; Prevent anti aliasing
 ;; (setq mac-allow-anti-aliasing nil)
 

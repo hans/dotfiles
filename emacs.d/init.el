@@ -20,6 +20,7 @@
 (load "scripts/rectangle")
 ;(load "scripts/flymake")
 (load "scripts/javascript")
+(load "scripts/mac")
 
 (vendor 'color-theme)
 (vendor 'filladapt)
