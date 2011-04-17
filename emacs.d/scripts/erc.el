@@ -36,3 +36,8 @@
 
 ;; fill the whole window
 (add-hook 'erc-mode-hook (lambda () (auto-fill-mode 1)))
+
+;; show notifications (via notify.el) when my nick is mentioned
+(add-hook 'erc-text-matched-hook (lambda (match-type nick message)
+                                   (unless (posix-string-match "^\\** *Users on #" message)
+                                     (notify "ERC" (concat "You were mentioned in " (buffer-name (current-buffer)))))))
