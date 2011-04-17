@@ -30,4 +30,4 @@
 	url = https://github.com/pheaver/haskell-mode.git
 [submodule "emacs.d/vendor/color-theme-solarized"]
 	path = emacs.d/vendor/color-theme-solarized
-	url = git://github.com/sellout/emacs-color-theme-solarized.git
+	url = git://github.com/bkudria/emacs-color-theme-solarized.git
