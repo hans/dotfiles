@@ -35,3 +35,4 @@
 (vendor 'haskell-mode  'haskell-mode)
 (vendor 'yasnippet)
 (vendor 'mode-line-bell)
+(vendor 'notify)
