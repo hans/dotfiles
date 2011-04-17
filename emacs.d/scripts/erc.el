@@ -10,7 +10,11 @@
 (setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
                                 "324" "329" "332" "333" "353" "457"))
 
+;; buttonize
+(require 'erc-button)
+
 ;; log
+(require 'erc-log)
 (setq erc-log-channels t)
 (setq erc-log-channels-directory "~/.irclogs")
 (setq erc-hide-timestamps nil)
