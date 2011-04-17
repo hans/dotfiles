@@ -21,6 +21,7 @@
 ;(load "scripts/flymake")
 (load "scripts/javascript")
 (load "scripts/mac")
+(load "scripts/erc")
 
 (vendor 'color-theme)
 (vendor 'filladapt)
