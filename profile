@@ -15,4 +15,4 @@ export LANG=en_US.UTF-8
 # CVS over SSH
 export CVS_RSH=ssh
 
-export EDITOR=vim
+export EDITOR=emacsclient
