@@ -8,7 +8,7 @@ task :install do
     home = File.expand_path('~')
 
     Dir['*'].each do |file|
-	next if file =~ /install/ or file == 'Rakefile' or file == 'README.markdown'
+	next if file =~ /install/ or file == 'Rakefile' or file =~ /\/.m(ark)?d(own)?$/i
 	target = File.join home, ".#{file}"
 	source = File.expand_path file
 	puts "#{source} -> #{target}"
