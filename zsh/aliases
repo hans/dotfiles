@@ -30,6 +30,9 @@ alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 ##### save some typing.. #####
 alias s='sudo'
 alias c='cd'
+alias ..='cd ../'
+alias ... ='cd ../../'
+alias ....='cd ../../../' 
 alias g='apt-get'
 alias rmr='rm -r'
 alias mkd='mkdir -p'
@@ -52,12 +55,12 @@ alias -g .s="| shasum"	    # SHA1 sum
 
 ##### ls (need to define differently for OSX) #####
 if [ -e "/Users" ]; then
-	alias l='ls -G'
-	alias la='ls -Ga'
+	alias l='ls -GlAh'
+	alias la='ls -GA'
 	alias ll='ls -lh'
 else
-	alias l='ls --color'
-	alias la='ls --color -a'
+	alias l='ls --color -lAh'
+	alias la='ls --color -A'
 	alias ll='ls --color -lh'
 fi
 
