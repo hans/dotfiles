@@ -30,6 +30,9 @@ alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 ##### save some typing.. #####
 alias s='sudo'
 alias c='cd'
+alias ..='cd ../'
+alias ... ='cd ../../'
+alias ....='cd ../../../' 
 alias g='apt-get'
 alias rmr='rm -r'
 alias mkd='mkdir -p'
