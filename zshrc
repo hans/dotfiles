@@ -2,7 +2,8 @@ export ZSH=$HOME/.zsh
 
 . ~/.profile
 . $ZSH/aliases
-. $ZSH/functions
+
+autoload -U $ZSH/functions/*(:t)
 
 autoload promptinit                                               # Walters zsh prompt
 promptinit                                                        # user@host> ... /some/pwd
