@@ -2,19 +2,24 @@
 
 (require 'erc)
 
+;; load modules
+(setq erc-modules (quote
+                   (autojoin button completion fill irccontrols list log match move-to-prompt netsplit networks noncommands readonly ring stamp track)))
+
+;; change prompt to >
+(setq erc-prompt ">")
+
+;; auto-reconnect
+(setq erc-server-auto-reconnect t)
+
 ;; track channels
-(require 'erc-track)
 (erc-track-mode t)
 
 ;; don't track JOIN, NICK, PART, QUIT, or MODE
 (setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
                                 "324" "329" "332" "333" "353" "457"))
 
-;; buttonize
-(require 'erc-button)
-
 ;; log
-(require 'erc-log)
 (setq erc-log-channels t)
 (setq erc-log-channels-directory "~/.irclogs")
 (setq erc-save-buffer-on-part t) ;; automatically write to log files when parting channels
