@@ -5,8 +5,11 @@
 (setq color-theme-is-global t)
 (setq color-theme-is-cumulative t)
 
-(vendor 'color-theme-railscasts)
-(color-theme-railscasts)
+(vendor 'color-theme-solarized)
+(color-theme-solarized 'dark)
+
+;; (vendor 'color-theme-railscasts)
+;; (color-theme-railscasts)
 
 ;; (vendor 'color-theme-arjen)
 ;; (color-theme-arjen)
