@@ -3,6 +3,7 @@ export ZSH=$HOME/.zsh
 . ~/.profile
 . $ZSH/aliases
 
+fpath=($ZSH/functions $fpath)
 autoload -U $ZSH/functions/*(:t)
 
 autoload promptinit                                               # Walters zsh prompt
