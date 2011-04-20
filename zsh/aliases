@@ -49,6 +49,7 @@ alias -g .lc="| wc -l"	    # line count
 alias -g .dn="/dev/null"
 alias -g .h="| head"
 alias -g .t="| tail"
+alias -g .tf="| tail -f"
 alias -g .l="| less"
 alias -g .m="| md5sum"	    # MD5 sum
 alias -g .s="| shasum"	    # SHA1 sum
