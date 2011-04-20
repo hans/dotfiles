@@ -24,7 +24,7 @@ zstyle ':completion:*' use-cache on                               # cache autoco
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
 zstyle ':completion:*' completer _complete _match _approximate    # fuzzy match autocompletion
-zstyle ':completion:*match:*' original only
+zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
-
+zstyle ':completion:*:descriptions' format '%B%d%b'               # describe the available completions
 zstyle ':completion:*:cd:*' ignore-parents parent pwd             # don't insert the parent directory when completing ../<TAB>
