@@ -1,0 +1,10 @@
+# Thanks @rtomayko: https://github.com/rtomayko/dotfiles/blob/rtomayko/bin/addr
+# Usage: ip [<if>]
+# Show IPv4 address for interface <if> or all interfaces with
+# no <if> given.
+function ip () {
+  ifconfig -a        |
+  grep 'inet '       |
+  grep broadcast     |
+  awk '{ print $2 }'
+}

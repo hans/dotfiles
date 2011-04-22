@@ -15,6 +15,7 @@ export PROMPT=" ⚛   "						                                  # atom-symbol pro
 autoload -Uz compinit                                             # tab completion
 compinit
 
+setopt BRACE_CCL                                                  # http://stackoverflow.com/questions/2394728
 setopt CORRECT                                                    # correct command spellings
 setopt NO_LIST_BEEP                                               # don't beep when listing directories on autocomplete
 
