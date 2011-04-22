@@ -1,8 +1,5 @@
 --- 
 :verbose: true
-:sources: 
-- http://gemcutter.org/
-- http://gems.github.com
 gem: --no-ri --no-rdoc
 :backtrace: false
 :benchmark: false
