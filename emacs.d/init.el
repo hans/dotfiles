@@ -33,6 +33,7 @@
 (vendor 'coffee-mode)
 (vendor 'php-mode)
 (vendor 'haskell-mode  'haskell-mode)
+(vendor 'mustache-mode)
 (vendor 'yasnippet)
 (vendor 'mode-line-bell)
 (vendor 'notify)

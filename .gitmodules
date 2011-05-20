@@ -31,3 +31,6 @@
 [submodule "emacs.d/vendor/color-theme-solarized"]
 	path = emacs.d/vendor/color-theme-solarized
 	url = git://github.com/bkudria/emacs-color-theme-solarized.git
+[submodule "emacs.d/vendor/nxhtml"]
+	path = emacs.d/vendor/nxhtml
+	url = git://github.com/emacsmirror/nxhtml.git
