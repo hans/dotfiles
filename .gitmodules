@@ -34,3 +34,9 @@
 [submodule "emacs.d/vendor/nxhtml"]
 	path = emacs.d/vendor/nxhtml
 	url = git://github.com/emacsmirror/nxhtml.git
+[submodule "emacs.d/vendor/scala-mode"]
+	path = emacs.d/vendor/scala-mode
+	url = https://github.com/afeinberg/scala-mode.git
+[submodule "emacs.d/vendor/clojure-mode"]
+	path = emacs.d/vendor/clojure-mode
+	url = git://github.com/jochu/clojure-mode.git

@@ -34,6 +34,8 @@
 (vendor 'php-mode)
 (vendor 'haskell-mode  'haskell-mode)
 (vendor 'mustache-mode)
+(vendor 'scala-mode)
+(vendor 'clojure-mode)
 (vendor 'yasnippet)
 (vendor 'mode-line-bell)
 (vendor 'notify)
