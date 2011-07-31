@@ -1,0 +1,16 @@
+# Stolen from
+# https://raw.github.com/robbyrussell/oh-my-zsh/master/lib/directories.zsh
+
+cd () {
+  if [[ "x$*" == "x..." ]]; then
+    builtin cd ../..
+  elif [[ "x$*" == "x...." ]]; then
+    builtin cd ../../..
+  elif [[ "x$*" == "x....." ]]; then
+    builtin cd ../../../..
+  elif [[ "x$*" == "x......" ]]; then
+    builtin cd ../../../../..
+  else
+    builtin cd "$@"
+  fi
+}
