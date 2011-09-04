@@ -36,6 +36,9 @@
 (vendor 'mustache-mode)
 (vendor 'scala-mode)
 (vendor 'clojure-mode)
+(vendor 'slime)
+(vendor 'haml-mode)
+
 (vendor 'yasnippet)
 (vendor 'mode-line-bell)
 (vendor 'notify)
