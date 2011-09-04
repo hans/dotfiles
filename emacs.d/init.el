@@ -23,6 +23,7 @@
 (load "scripts/javascript")
 (load "scripts/mac")
 (load "scripts/erc")
+(load "scripts/paredit")
 
 (vendor 'color-theme)
 (vendor 'filladapt)
