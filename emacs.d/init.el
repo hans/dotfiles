@@ -7,6 +7,7 @@
 (load "scripts/global")
 (load "scripts/defuns")
 (load "scripts/bindings")
+(load "scripts/package")
 (load "scripts/tabs")
 (load "scripts/disabled")
 (load "scripts/fonts")
