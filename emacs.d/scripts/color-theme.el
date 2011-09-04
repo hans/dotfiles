@@ -31,9 +31,3 @@
 ;; (color-theme-rotor)
 ;; (color-theme-emacs-21)
 ;; (color-theme-gtk-ide)
-
-(set-face-foreground 'region "white")
-(set-face-background 'region "slategray")
-
-(blink-cursor-mode)
-(set-cursor-color "orange")
