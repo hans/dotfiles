@@ -23,7 +23,6 @@
 ;; Refresh-like
 (global-set-key [(f5)]         'revert-buffer)
 (global-set-key [(control f5)] 'toggle-read-only)
-(global-set-key [(shift f5)]   'ecb-redraw-layout)
 
 ;; Indenting and alignment
 (global-set-key [(f8)]         'indent-region)
@@ -32,11 +31,8 @@
 (global-set-key [(meta f8)]    'align-regexp)
 
 ;; Version control and change related
-;(global-set-key [(control f9)]      'rails-svn-status-into-root)  ;; Move to rails mode?
-;(global-set-key [(control meta f9)] (lambda () (interactive) (svn-status default-directory)))
 (global-set-key [(control f9)] (lambda () (interactive) (magit-status default-directory)))
 (global-set-key [(f9)]         (lambda () (interactive) (magit-status default-directory)))
-(global-set-key [(meta f9)]    'autotest-switch)  ;; Move to ruby/rails mode?
 
 ;; Map the window manipulation keys to meta 0, 1, 2, o
 (global-set-key (kbd "M-3") 'split-window-horizontally) ; was digit-argument
