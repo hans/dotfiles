@@ -1,0 +1,2 @@
+(require 'slime)
+(slime-setup)
