@@ -1,5 +1,7 @@
 ; Package management
 
+(require 'package)
+
 (add-to-list 'package-archives '("elpa" .
                                  "http://tromey.com/elpa/"))
 
