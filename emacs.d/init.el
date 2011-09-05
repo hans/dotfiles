@@ -23,7 +23,6 @@
 (load "scripts/javascript")
 (load "scripts/mac")
 (load "scripts/erc")
-(load "scripts/paredit")
 
 (vendor 'color-theme)
 (vendor 'filladapt)
@@ -44,3 +43,5 @@
 (vendor 'yasnippet)
 (vendor 'mode-line-bell)
 (vendor 'notify)
+
+(load "scripts/lisp")
