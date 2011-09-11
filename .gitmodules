@@ -49,3 +49,6 @@
 [submodule "emacs.d/vendor/paredit"]
 	path = emacs.d/vendor/paredit
 	url = https://github.com/emacsmirror/paredit.git
+[submodule "emacs.d/vendor/color-theme-n0tch2k"]
+	path = emacs.d/vendor/color-theme-n0tch2k
+	url = https://github.com/hans/color-theme-n0tch2k.git
