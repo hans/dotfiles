@@ -19,7 +19,7 @@
 (load "scripts/dired")
 (load "scripts/recentf")
 (load "scripts/rectangle")
-;(load "scripts/flymake")
+(load "scripts/flymake")
 (load "scripts/javascript")
 (load "scripts/mac")
 (load "scripts/erc")
