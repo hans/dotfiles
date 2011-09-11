@@ -4,6 +4,9 @@ emacs.d/auto-save-list/*
 emacs.d/backups/*
 !emacs.d/backups/empty
 
+emacs.d/elpa/*
+!emacs.d/elpa/empty
+
 emacs.d/tramp
 
 emacs.d/tetris-scores
