@@ -44,5 +44,5 @@
 (vendor 'mode-line-bell)
 (vendor 'notify)
 
-(vendor 'paredit)
+(vendor 'paredit 'paredit-mode)
 (load "scripts/lisp")
