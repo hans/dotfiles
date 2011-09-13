@@ -26,6 +26,7 @@
 
 (vendor 'color-theme)
 (vendor 'filladapt)
+(vendor 'flymake-cursor)
 (vendor 'full-ack      'ack 'ack-same 'ack-find-same-file 'ack-find-file 'ack-interactive)
 (vendor 'magit         'magit-status)
 (vendor 'markdown-mode 'markdown-mode)

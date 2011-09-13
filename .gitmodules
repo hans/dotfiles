@@ -52,3 +52,6 @@
 [submodule "emacs.d/vendor/color-theme-n0tch2k"]
 	path = emacs.d/vendor/color-theme-n0tch2k
 	url = https://github.com/hans/color-theme-n0tch2k.git
+[submodule "emacs.d/vendor/flymake-cursor"]
+	path = emacs.d/vendor/flymake-cursor
+	url = https://github.com/emacsmirror/flymake-cursor.git
