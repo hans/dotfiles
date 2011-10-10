@@ -34,7 +34,10 @@
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 
 ;; Gotta see matching parens
+;; Highlight both parens if they are visible. If only one is visible, highlight
+;; the entire expression they contain.
 (show-paren-mode t)
+(setq show-paren-style 'mixed)
 
 ;; Don't truncate lines
 (setq truncate-lines t)
@@ -56,6 +59,25 @@
 
 ;; Hide the menu bar
 (menu-bar-mode 0)
+
+;; Electric pair: Auto-insert pair characters
+;; ex. when you type (, ) is inserted after the cursor
+(electric-pair-mode t)
+
+;; Electric layout mode
+(electric-layout-mode t)
+
+;; Better names for buffers of same filename
+;; If you open both ~/foo/a.sh and ~/Desktop/a.sh, the buffer names will be
+;; 'foo/a.sh' and 'Desktop/a.sh' rather than 'a.sh' and 'a.sh<2>'.
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+(setq uniquify-separator "/")
+(setq uniquify-after-kill-buffer-p t)    ; rename after killing uniquified
+(setq uniquify-ignore-buffers-re "^\\*") ; don't muck with special buffers
+
+;; Preserve screen position of cursor when scrolling
+(setq scroll-preserve-screen-position t)
 
 ;; zap-up-to-char, forward-to-word, backward-to-word, etc
 (require 'misc)

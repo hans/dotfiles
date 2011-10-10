@@ -55,7 +55,9 @@
 (global-set-key [(control z)] 'repeat) ; was suspend-frame
 
 ;; Window navigation
-(windmove-default-keybindings 'meta)
+;; Move cursor from window to window with Shift + arrow key.
+(require 'windmove)
+(windmove-default-keybindings 'shift)
 
 ;; Mac OS X conventions
 (global-set-key (kbd "M-a") 'mark-whole-buffer) ; was backward-sentence.
