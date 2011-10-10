@@ -2,6 +2,66 @@
 
 (require 'flymake)
 
+;;; Override the default Flymake tempfile generator.
+;;; By default, Flymake creates temporary files in place - in the same
+;;; directory as that of the actual file being tested. This makes using
+;;; Flymake over Tramp difficult, if not impossible, because Flymake keeps
+;;; reconnecting to the server to upload the test script and then run the
+;;; binary.
+;;;
+;;; Let's create the temp file in a temp dir instead.
+;;; Thanks http://blog.urth.org/2011/06/flymake-versus-the-catalyst-restarter.html
+
+(defun flymake-create-temp-inplace (file-name prefix)
+  (unless (stringp file-name)
+    (error "Invalid file-name"))
+  (or prefix
+      (setq prefix "flymake"))
+  (let* ((name (concat
+                (file-name-nondirectory
+                 (file-name-sans-extension file-name))
+                "_" prefix))
+         (ext (concat "." (file-name-extension file-name)))
+         (temp-name (make-temp-file name nil ext)))
+    (flymake-log 3 "create-temp-inplace: file=%s temp=%s" file-name temp-name)
+    temp-name))
+
+;;; Run the syntax-checking binary locally as well.
+;;; (This code is exactly the same as Flymake core's, except for a change from
+;;; the start-file-process function to start-process.)
+
+(defun flymake-start-syntax-check-process (cmd args dir)
+  "Start syntax check process."
+  (let* ((process nil))
+    (condition-case err
+        (progn
+          (when dir
+            (let ((default-directory dir))
+              (flymake-log 3 "starting process on dir %s" default-directory)))
+          (setq process (apply 'start-process
+                               "flymake-proc" (current-buffer) cmd args))
+          (set-process-sentinel process 'flymake-process-sentinel)
+          (set-process-filter process 'flymake-process-filter)
+          (push process flymake-processes)
+
+          (setq flymake-is-running t)
+          (setq flymake-last-change-time nil)
+          (setq flymake-check-start-time (flymake-float-time))
+
+          (flymake-report-status nil "*")
+          (flymake-log 2 "started process %d, command=%s, dir=%s"
+                       (process-id process) (process-command process)
+                       default-directory)
+          process)
+      (error
+       (let* ((err-str (format "Failed to launch syntax check process '%s' with args %s: %s"
+                               cmd args (error-message-string err)))
+              (source-file-name buffer-file-name)
+              (cleanup-f (flymake-get-cleanup-function source-file-name)))
+         (flymake-log 0 err-str)
+         (funcall cleanup-f)
+         (flymake-report-fatal-status "PROCERR" err-str))))))
+
 ;;; PHP
 (add-hook 'php-mode-hook (lambda () (flymake-mode 1)))
 
