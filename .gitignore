@@ -8,6 +8,7 @@ emacs.d/elpa/*
 !emacs.d/elpa/empty
 
 emacs.d/tramp
+emacs.d/url
 
 emacs.d/tetris-scores
 
