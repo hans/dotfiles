@@ -16,6 +16,7 @@
 ;(load "scripts/grep")	    ;; Disabled for now. ack > grep
 (load "scripts/diff")
 (load "scripts/ido")
+(load "scripts/ibuffer")
 (load "scripts/icomplete")
 (load "scripts/dired")
 (load "scripts/recentf")
