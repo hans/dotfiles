@@ -1,57 +1,6 @@
-[submodule "emacs.d/vendor/color-theme"]
-	path = emacs.d/vendor/color-theme
-	url = https://github.com/emacsmirror/color-theme.git
-[submodule "emacs.d/vendor/filladapt"]
-	path = emacs.d/vendor/filladapt
-	url = https://github.com/emacsmirror/filladapt.git
-[submodule "emacs.d/vendor/magit"]
-	path = emacs.d/vendor/magit
-	url = https://github.com/philjackson/magit.git
-[submodule "emacs.d/vendor/markdown-mode"]
-	path = emacs.d/vendor/markdown-mode
-	url = https://github.com/defunkt/markdown-mode.git
-[submodule "emacs.d/vendor/yaml-mode"]
-	path = emacs.d/vendor/yaml-mode
-	url = https://github.com/yoshiki/yaml-mode.git
-[submodule "emacs.d/vendor/yasnippet"]
-	path = emacs.d/vendor/yasnippet
-	url = https://github.com/emacsmirror/yasnippet.git
-[submodule "emacs.d/vendor/full-ack"]
-	path = emacs.d/vendor/full-ack
-	url = https://github.com/nschum/full-ack.git
-[submodule "emacs.d/vendor/color-theme-twilight"]
-	path = emacs.d/vendor/color-theme-twilight
-	url = https://github.com/crafterm/twilight-emacs.git
-[submodule "emacs.d/vendor/coffee-mode"]
-	path = emacs.d/vendor/coffee-mode
-	url = https://github.com/defunkt/coffee-mode.git
-[submodule "emacs.d/vendor/haskell-mode"]
-	path = emacs.d/vendor/haskell-mode
-	url = https://github.com/pheaver/haskell-mode.git
-[submodule "emacs.d/vendor/color-theme-solarized"]
-	path = emacs.d/vendor/color-theme-solarized
-	url = git://github.com/bkudria/emacs-color-theme-solarized.git
 [submodule "emacs.d/vendor/nxhtml"]
 	path = emacs.d/vendor/nxhtml
 	url = git://github.com/emacsmirror/nxhtml.git
-[submodule "emacs.d/vendor/scala-mode"]
-	path = emacs.d/vendor/scala-mode
-	url = https://github.com/afeinberg/scala-mode.git
-[submodule "emacs.d/vendor/clojure-mode"]
-	path = emacs.d/vendor/clojure-mode
-	url = git://github.com/jochu/clojure-mode.git
-[submodule "emacs.d/vendor/slime"]
-	path = emacs.d/vendor/slime
-	url = git://github.com/nablaone/slime.git
-[submodule "emacs.d/vendor/haml-mode"]
-	path = emacs.d/vendor/haml-mode
-	url = https://github.com/nex3/haml-mode.git
-[submodule "emacs.d/vendor/paredit"]
-	path = emacs.d/vendor/paredit
-	url = https://github.com/emacsmirror/paredit.git
 [submodule "emacs.d/vendor/color-theme-n0tch2k"]
 	path = emacs.d/vendor/color-theme-n0tch2k
 	url = https://github.com/hans/color-theme-n0tch2k.git
-[submodule "emacs.d/vendor/flymake-cursor"]
-	path = emacs.d/vendor/flymake-cursor
-	url = https://github.com/emacsmirror/flymake-cursor.git
