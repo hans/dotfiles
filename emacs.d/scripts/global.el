@@ -79,5 +79,8 @@
 ;; Preserve screen position of cursor when scrolling
 (setq scroll-preserve-screen-position t)
 
+;; Pressing C-n when the point is at the end of the buffer will insert newlines
+(setq next-line-add-newlines t)
+
 ;; zap-up-to-char, forward-to-word, backward-to-word, etc
 (require 'misc)
