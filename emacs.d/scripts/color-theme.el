@@ -1,6 +1,6 @@
 ;;; Pretty colors
 
-(color-theme-initialize)
+(require 'color-theme)
 
 (setq color-theme-is-global t)
 (setq color-theme-is-cumulative t)
