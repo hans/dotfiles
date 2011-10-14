@@ -21,6 +21,10 @@
 (setq interprogram-cut-function 'mac-paste)
 (setq interprogram-paste-function 'mac-copy)
 
+;; Cocoa Emacs: M-RET to toggle fullscreen
+(when (fboundp 'ns-toggle-fullscreen)
+  (global-set-key (kbd "M-RET") 'ns-toggle-fullscreen))
+
 ;; Prevent anti aliasing
 ;; (setq mac-allow-anti-aliasing nil)
 
