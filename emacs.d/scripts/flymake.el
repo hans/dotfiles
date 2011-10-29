@@ -89,3 +89,9 @@
 (provide 'flymake-jslint)
 (require 'flymake-jslint)
 (add-hook 'js-mode-hook (lambda () (flymake-mode 1)))
+
+
+;; RFringe: Display number and location of flymake errors/warnings on the fringe
+;; Load custom .el in .emacs.d/vendor
+(load "rfringe")
+(require 'rfringe)
