@@ -4,3 +4,6 @@
       swank-clojure-extra-classpaths (list
                                       "~/.clojure/clojure-contrib.jar"
                                       "~/.clojure/src/clj/clojure"))
+
+(eval-after-load "slime"
+  '(progn (slime-setup '(slime-repl))))

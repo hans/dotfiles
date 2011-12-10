@@ -11,10 +11,10 @@
   (package-refresh-contents))
 
 (defvar required-packages
-  '(clojure-mode clojure-test-mode coffee-mode color-theme flymake-cursor
+  '(clojure-mode coffee-mode color-theme flymake-cursor
                  full-ack haml-mode haskell-mode magit markdown-mode
-                 mustache-mode notify paredit php-mode scala-mode slime
-                 slime-repl swank-clojure yaml-mode yasnippet yasnippet-bundle)
+                 mustache-mode notify paredit php-mode scala-mode
+                 yaml-mode yasnippet yasnippet-bundle j-mode)
   "Packages which should be installed upon launch")
 
 (dolist (p required-packages)
