@@ -83,3 +83,7 @@
 
 ;; Comment region
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region)
+
+;; Kill lines more intelligently. Keep the dumb command too.
+(global-set-key (kbd "C-k") 'kill-and-join-forward)
+(global-set-key (kbd "C-S-k") 'kill-line)

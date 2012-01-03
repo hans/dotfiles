@@ -116,3 +116,30 @@ point."
        (or (eobp) (not (= ?w (char-syntax (char-after))))))
       (dabbrev-expand arg)
     (indent-according-to-mode)))
+
+;; Normally, killing the newline between indented lines doesn’t remove any extra
+;; spaces caused by indentation. That is, placing the cursor (symbolized by [])
+;; at
+;;
+;;         AAAAAAAAAA[]
+;;         AAAAAAAAAA
+;; and pressing C-k (bound to kill-line) results in
+;;
+;;         AAAAAAAAAA[]        AAAAAAAAAA
+;; when it might be more desirable to have
+;;
+;;         AAAAAAAAAA[]AAAAAAAAAA
+;; which is what would have happened if the lines were not indented.
+;;
+;; http://www.emacswiki.org/emacs/AutoIndentation
+;;
+;; This function is bound to C-k to replace the default kill-line command: see
+;; bindings.el.
+(defun kill-and-join-forward (&optional arg)
+      (interactive "P")
+      (if (and (eolp) (not (bolp)))
+          (progn (forward-char 1)
+                 (just-one-space 0)
+                 (backward-char 1)
+                 (kill-line arg))
+        (kill-line arg)))
