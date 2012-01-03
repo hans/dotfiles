@@ -3,6 +3,8 @@
 ;; How to Define Keyboard Shortcuts in Emacs
 ;; http://xahlee.org/emacs/keyboard_shortcuts.html
 
+(global-set-key (kbd "RET") 'newline-and-indent)
+
 ;; Window manipulation
 (global-set-key [(control kp-6)] 'enlarge-window-horizontally)
 (global-set-key [(control kp-4)] 'shrink-window-horizontally)
