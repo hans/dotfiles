@@ -7,6 +7,7 @@ emacs.d/backups/*
 emacs.d/elpa/*
 !emacs.d/elpa/empty
 
+emacs.d/swank
 emacs.d/tramp
 emacs.d/url
 
