@@ -82,5 +82,8 @@
 ;; Pressing C-n when the point is at the end of the buffer will insert newlines
 (setq next-line-add-newlines t)
 
+;; Don't auto-save so often - it makes Tramp editing difficult!
+(setq auto-save-interval 10000)
+
 ;; zap-up-to-char, forward-to-word, backward-to-word, etc
 (require 'misc)
