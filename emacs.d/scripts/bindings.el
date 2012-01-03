@@ -80,3 +80,6 @@
 (global-set-key (kbd "M-Z") 'zap-up-to-char)
 (global-set-key (kbd "M-F") 'forward-to-word)
 (global-set-key (kbd "M-B") 'backward-to-word)
+
+;; Comment region
+(global-set-key (kbd "C-;") 'comment-or-uncomment-region)
