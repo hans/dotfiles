@@ -87,3 +87,8 @@
 ;; Kill lines more intelligently. Keep the dumb command too.
 (global-set-key (kbd "C-k") 'kill-and-join-forward)
 (global-set-key (kbd "C-S-k") 'kill-line)
+
+;; C-a should jump to the first non-whitespace char.
+;; M-m should jump to the actual start of the line.
+(global-set-key (kbd "C-a") 'back-to-indentation)
+(global-set-key (kbd "M-m") 'move-beginning-of-line)
