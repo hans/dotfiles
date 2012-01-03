@@ -5,7 +5,7 @@ This a collection of dotfiles that fit my workflow. Tools that I use daily and t
 -  emacs
 -  vim (more emacs-focused, though)
 -  homebrew
--  Ruby, PHP, Python, Perl, HTML, CSS, JS / CoffeeScript
+-  PHP, Python, HTML, CSS, JS / CoffeeScript, Haskell, Lisp, Clojure
 
 I've tried to make these configurations as portable as possible. Most of the customizations here have been tested to work on both Linux and OS X.
 
