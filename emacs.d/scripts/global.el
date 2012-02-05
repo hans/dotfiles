@@ -91,3 +91,6 @@
 ;; Replace selected regions just by typing; kill by pressing DEL (matches usual
 ;; GUI behavior)
 (delete-selection-mode 1)
+
+;; Don't blink cursor
+(blink-cursor-mode -1)
