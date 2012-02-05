@@ -10,3 +10,6 @@
 [submodule "emacs.d/vendor/hardcore-mode"]
 	path = emacs.d/vendor/hardcore-mode
 	url = https://github.com/magnars/hardcore-mode.el.git
+[submodule "emacs.d/vendor/php-mode"]
+	path = emacs.d/vendor/php-mode
+	url = https://github.com/ejmr/php-mode.git

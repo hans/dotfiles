@@ -13,7 +13,7 @@
 (defvar required-packages
   '(clojure-mode coffee-mode color-theme flymake-cursor full-ack haml-mode
                  haskell-mode magit markdown-mode mustache-mode notify paredit
-                 php-mode scala-mode yaml-mode yasnippet yasnippet-bundle j-mode
+                 scala-mode yaml-mode yasnippet yasnippet-bundle j-mode
                  ace-jump-mode expand-region js2-mode)
   "Packages which should be installed upon launch")
 
