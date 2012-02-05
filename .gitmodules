@@ -1,6 +1,3 @@
-[submodule "emacs.d/vendor/nxhtml"]
-	path = emacs.d/vendor/nxhtml
-	url = git://github.com/emacsmirror/nxhtml.git
 [submodule "emacs.d/vendor/color-theme-n0tch2k"]
 	path = emacs.d/vendor/color-theme-n0tch2k
 	url = https://github.com/hans/color-theme-n0tch2k.git
