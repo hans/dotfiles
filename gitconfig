@@ -11,7 +11,7 @@
 	branch = auto
 [core]
 	excludesfile = ~/.gitignore
-	editor = vim
+	editor = emacsclient
 [mirror]
 	summary = true
 [github]
