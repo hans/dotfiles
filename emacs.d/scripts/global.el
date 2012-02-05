@@ -87,3 +87,7 @@
 
 ;; zap-up-to-char, forward-to-word, backward-to-word, etc
 (require 'misc)
+
+;; Replace selected regions just by typing; kill by pressing DEL (matches usual
+;; GUI behavior)
+(delete-selection-mode 1)
