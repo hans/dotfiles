@@ -4,3 +4,6 @@
 [submodule "emacs.d/vendor/color-theme-n0tch2k"]
 	path = emacs.d/vendor/color-theme-n0tch2k
 	url = https://github.com/hans/color-theme-n0tch2k.git
+[submodule "emacs.d/vendor/mark-multiple"]
+	path = emacs.d/vendor/mark-multiple
+	url = https://github.com/magnars/mark-multiple.el.git
