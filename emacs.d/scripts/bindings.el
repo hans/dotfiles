@@ -92,3 +92,6 @@
 ;; M-m should jump to the actual start of the line.
 (global-set-key (kbd "C-a") 'back-to-indentation)
 (global-set-key (kbd "M-m") 'move-beginning-of-line)
+
+;; Cycle through buffers
+(global-set-key (kbd "<C-tab>") 'bury-buffer)
