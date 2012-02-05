@@ -9,5 +9,4 @@
 ;; Load all necessary packages first, then load all customization scripts in the
 ;; directory at ./scripts
 
-(load "packages")
 (load-dir "~/.emacs.d/scripts")
