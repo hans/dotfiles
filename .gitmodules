@@ -10,3 +10,6 @@
 [submodule "emacs.d/vendor/php-mode"]
 	path = emacs.d/vendor/php-mode
 	url = https://github.com/ejmr/php-mode.git
+[submodule "zsh/zsh-syntax-highlighting"]
+	path = zsh/zsh-syntax-highlighting
+	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
