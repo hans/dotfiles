@@ -68,7 +68,7 @@ else
 fi
 
 ##### editors #####
-alias e='emacs'
+alias e='emacsclient'
 alias v='vim'
 
 ##### coding #####
