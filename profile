@@ -3,6 +3,7 @@ if [ -e "/Users" ]; then
 	export PATH=$HOME/.bin:/usr/local/bin:/usr/local/sbin:$PATH
 	export MANPATH=/usr/local/share/man:$MANPATH
 	export INFOPATH=/usr/local/share/info:$INFOPATH
+	export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
 fi
 
 # RVM
