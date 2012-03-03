@@ -62,12 +62,6 @@ More precisely, return t if the file name extension matches
     (when (file-exists-p (concat personal ".el"))
       (load personal))))
 
-;; Arrows are common, especially in ruby
-(defun insert-arrow ()
-  (interactive)
-  (delete-horizontal-space)
-  (insert " => "))
-
 ;; Quickly jump back and forth between matching parens/brackets
 (defun match-paren (arg)
   "Go to the matching parenthesis if on parenthesis."

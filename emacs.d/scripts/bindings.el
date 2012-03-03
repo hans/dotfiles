@@ -12,11 +12,9 @@
 (global-set-key [(control kp-2)] 'shrink-window)
 
 ;; Find stuff
-(global-set-key [(f2)]              'ack-default-directory)
-(global-set-key [(control f2)]      'ack-same)
-(global-set-key [(control meta f2)] 'ack)
+(global-set-key [(f2)]              'ack-and-a-half)
+(global-set-key [(control f2)]      'ack-and-a-half-same)
 (global-set-key [(meta f2)]         'find-name-dired)
-(global-set-key [(shift f2)]        'occur)
 
 ;; Keyboard macros
 (global-set-key [(shift f4)] 'kmacro-start-macro-or-insert-counter)
@@ -46,15 +44,9 @@
 (add-hook 'dired-mode-hook (lambda () (define-key dired-mode-map (kbd "M-o") 'other-window))) ; was dired-omit-mode
 ;; Replace ibuffer's M-o
 (add-hook 'ibuffer-mode-hook (lambda () (define-key ibuffer-mode-map (kbd "M-o") 'other-window))) ; was ibuffer-visit-buffer-1-window
-;; To help Unlearn C-x 0, 1, 2, o
-(global-unset-key (kbd "C-x 3")) ; was split-window-horizontally
-(global-unset-key (kbd "C-x 2")) ; was split-window-vertically
-(global-unset-key (kbd "C-x 1")) ; was delete-other-windows
-(global-unset-key (kbd "C-x 0")) ; was delete-window
-(global-unset-key (kbd "C-x o")) ; was other-window
 
-;; Repeat
-(global-set-key [(control z)] 'repeat) ; was suspend-frame
+;; Repeat the last command that was typed into the minibuffer
+(global-set-key [(control z)] 'repeat-complex-command) ; was suspend-frame
 
 ;; Window navigation
 ;; Move cursor from window to window with Shift + arrow key.
@@ -67,19 +59,11 @@
 ;; Find matching parens
 (global-set-key (kbd "C-'") 'match-paren)
 
-;; Easy inserts
-(global-set-key (kbd "C-.") 'insert-arrow)
-
 ;; ibuffer > list-buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Easier buffer killing
 (global-set-key (kbd "M-k") 'kill-this-buffer)
-
-;; Improved navigation and editing (assumes misc.el)
-(global-set-key (kbd "M-Z") 'zap-up-to-char)
-(global-set-key (kbd "M-F") 'forward-to-word)
-(global-set-key (kbd "M-B") 'backward-to-word)
 
 ;; Comment region
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region)
