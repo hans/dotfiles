@@ -22,3 +22,4 @@ My Emacs configuration (/emacs.d/) is based on Ryan McGeary's (a.k.a rmm5t) amaz
 Other dotfile repos from which I have stolen:
 
 * [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
+* [rtomayko/dotfiles](https://github.com/rtomayko/dotfiles)
