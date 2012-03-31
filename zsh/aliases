@@ -73,3 +73,6 @@ alias rb='ruby'
 alias pl='perl'
 alias py='python'
 alias no='node'
+
+##### sniff HTTP traffic #####
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"

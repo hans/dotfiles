@@ -18,3 +18,7 @@ Please fork this and make as many changes as you want, under one condition: tell
 ## Credits
 
 My Emacs configuration (/emacs.d/) is based on Ryan McGeary's (a.k.a rmm5t) amazing collection of Emacs configs. You can find his dotfiles on [GitHub](https://github.com/rmm5t/dotfiles "rmm5t's dotfiles on GitHub").
+
+Other dotfile repos from which I have stolen:
+
+* [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
