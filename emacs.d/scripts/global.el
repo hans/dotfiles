@@ -64,8 +64,9 @@
 ;; ex. when you type (, ) is inserted after the cursor
 (electric-pair-mode t)
 
-;; Electric layout mode
+;; Smart layout / indenting
 (electric-layout-mode t)
+(electric-indent-mode t)
 
 ;; Better names for buffers of same filename
 ;; If you open both ~/foo/a.sh and ~/Desktop/a.sh, the buffer names will be
