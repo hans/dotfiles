@@ -20,10 +20,6 @@ alias glo="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(
 alias gp='git push'
 # show git-status in short mode, with branch info
 alias gst='git status -sb'
-# git-extras
-alias gpc='git cush'
-alias nvm='git nvm'
-alias gt='git track'
 # thanks holman, this rules
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 
