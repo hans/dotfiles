@@ -44,13 +44,14 @@ alias ifcfg='ifconfig'
 
 #### more typing saved with global aliases ####
 alias -g .lc="| wc -l"	    # line count
-alias -g .dn="/dev/null"
+alias -g .dn="2>&1 > /dev/null"
 alias -g .h="| head"
 alias -g .t="| tail"
 alias -g .tf="| tail -f"
 alias -g .l="| less"
 alias -g .m="| md5sum"	    # MD5 sum
 alias -g .s="| shasum"	    # SHA1 sum
+alias -g .c="| pbcopy"
 
 ##### ls (need to define differently for OSX) #####
 if [ -e "/Users" ]; then
