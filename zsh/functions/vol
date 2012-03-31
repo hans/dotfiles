@@ -1,0 +1,35 @@
+# Modify the OS X system volume by some delta.
+#
+# Possible usages:
+#
+#     vol +
+#         Raise the system volume by 2 steps.
+#     vol -
+#         Lower the system volume by 2 steps.
+#     vol ++
+#         Raise the system volume by 4 steps.
+#     vol --
+#         Lower the system volume by 4 steps.
+#     vol +++
+#         Raise the system volume by 8 steps.
+#     vol ---
+#         Lower the system volume by 8 steps.
+#     vol ++++
+#         Raise the system volume by 16 steps.
+#     vol ----
+#         Lower the system volume by 16 steps.
+function vol() {
+  local delta=0
+
+  if [[ $1 == "+" ]]; then
+    delta=2
+  elif [[ ${1:0:2} == "++" ]]; then
+    let "delta=2**${#1}"
+  elif [[ $1 == "-" ]]; then
+    delta=-2
+  elif [[ ${1:0:2} == "--" ]]; then
+    let "delta=-(2**${#1})"
+  fi
+
+  osascript vol.scpt $delta
+}
