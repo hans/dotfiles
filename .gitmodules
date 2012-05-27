@@ -4,9 +4,6 @@
 [submodule "emacs.d/vendor/mark-multiple"]
 	path = emacs.d/vendor/mark-multiple
 	url = https://github.com/magnars/mark-multiple.el.git
-[submodule "emacs.d/vendor/hardcore-mode"]
-	path = emacs.d/vendor/hardcore-mode
-	url = https://github.com/magnars/hardcore-mode.el.git
 [submodule "emacs.d/vendor/php-mode"]
 	path = emacs.d/vendor/php-mode
 	url = https://github.com/ejmr/php-mode.git
@@ -16,3 +13,6 @@
 [submodule "emacs.d/vendor/pretty-mode"]
 	path = emacs.d/vendor/pretty-mode
 	url = https://github.com/hans/pretty-mode.git
+[submodule "emacs.d/vendor/mmm-mode"]
+	path = emacs.d/vendor/mmm-mode
+	url = https://github.com/purcell/mmm-mode.git
