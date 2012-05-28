@@ -73,9 +73,7 @@
          (local-file (file-relative-name
                        temp-file
                        (file-name-directory buffer-file-name))))
-    (list "/usr/local/bin/jslint" (list local-file))))
-
-
+    (list "/usr/local/bin/jslint" (list "--terse" local-file))))
 
 (provide 'flymake-jslint)
 (require 'flymake-jslint)
@@ -112,7 +110,7 @@
 (setq flymake-err-line-patterns
       (cons
        ;; JS
-       '("[[:digit:]] \\([[:digit:]]+\\),\\([[:digit:]]+\\): \\(.+\\)" nil 1 2 3)
+       '("\\(.+\\)\(\\([[:digit:]]+\\)\):\\(.+\\)" 1 2 nil 3)
 
        ;; CSS
        (cons
