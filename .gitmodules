@@ -15,4 +15,4 @@
 	url = https://github.com/hans/pretty-mode.git
 [submodule "emacs.d/vendor/mmm-mode"]
 	path = emacs.d/vendor/mmm-mode
-	url = https://github.com/purcell/mmm-mode.git
+	url = git://github.com/purcell/mmm-mode.git
