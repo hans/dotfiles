@@ -8,6 +8,9 @@
             ;; let coffee-mode handle indenting
             (electric-indent-mode -1)
 
+            ;; use js-mode to view compiled code
+            (setq coffee-js-mode 'js-mode)
+
             ;; Compile on save
             (when (file-exists-p (buffer-file-name))
                (coffee-cos-mode +1))))
