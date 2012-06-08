@@ -137,3 +137,20 @@ point."
                  (backward-char 1)
                  (kill-line arg))
         (kill-line arg)))
+
+(defun comment-or-uncomment-line (&optional lines)
+  "Comment current line. Argument gives the number of lines forward to comment"
+  (interactive "P")
+  (comment-or-uncomment-region
+   (line-beginning-position)
+   (line-end-position lines)))
+
+(defun comment-or-uncomment-region-or-line (&optional lines)
+  "If a region is marked, comment or uncomment it. Otherwise comment/uncomment
+   the current line."
+  (interactive "P")
+  (if mark-active
+      (if (< (mark) (point))
+          (comment-or-uncomment-region (mark) (point))
+        (comment-or-uncomment-region (point) (mark)))
+    (comment-or-uncomment-line lines)))

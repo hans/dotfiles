@@ -23,3 +23,4 @@ Other dotfile repos from which I have stolen:
 
 * [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
 * [rtomayko/dotfiles](https://github.com/rtomayko/dotfiles)
+* [thomasf/dotfiles-thomasf-emacs](https://github.com/thomasf/dotfiles-thomasf-emacs)
