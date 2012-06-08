@@ -73,7 +73,8 @@
          (local-file (file-relative-name
                        temp-file
                        (file-name-directory buffer-file-name))))
-    (list "/usr/local/bin/jslint" (list "--terse" local-file))))
+    (list "/usr/local/bin/jslint" (list "--terse" "--sloppy" "--indent" "2"
+                                        local-file))))
 
 (provide 'flymake-jslint)
 (require 'flymake-jslint)
