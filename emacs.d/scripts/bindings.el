@@ -66,7 +66,7 @@
 (global-set-key (kbd "M-k") 'kill-this-buffer)
 
 ;; Comment region
-(global-set-key (kbd "C-;") 'comment-or-uncomment-region-or-line)
+(global-set-key (kbd "M-;") 'comment-or-uncomment-region-or-line)
 
 ;; Kill lines more intelligently. Keep the dumb command too.
 (global-set-key (kbd "C-k") 'kill-and-join-forward)
