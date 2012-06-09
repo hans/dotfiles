@@ -5,8 +5,7 @@
 (setq color-theme-is-global t)
 (setq color-theme-is-cumulative t)
 
-(vendor 'color-theme-n0tch2k)
-(color-theme-n0tch2k)
+(load-theme 'zenburn t)
 
 ;; (vendor 'color-theme-solarized)
 ;; (color-theme-solarized 'dark)
