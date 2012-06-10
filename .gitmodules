@@ -16,3 +16,6 @@
 [submodule "emacs.d/vendor/mmm-mode"]
 	path = emacs.d/vendor/mmm-mode
 	url = git://github.com/purcell/mmm-mode.git
+[submodule "emacs.d/snippets/js-mode"]
+	path = emacs.d/snippets/js-mode
+	url = git@github.com:hans/yasnippet-js-mode.git
