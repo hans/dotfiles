@@ -2,7 +2,9 @@
 
 (require 'dropdown-list)
 
-(yas/global-mode 1)
+(yas/initialize)
+
+(yas/load-directory "~/.emacs.d/snippets")
 
 (setq yas/prompt-functions '(yas/dropdown-prompt
                              yas/ido-prompt
