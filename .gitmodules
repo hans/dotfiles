@@ -19,3 +19,6 @@
 [submodule "emacs.d/snippets/js-mode"]
 	path = emacs.d/snippets/js-mode
 	url = git@github.com:hans/yasnippet-js-mode.git
+[submodule "emacs.d/snippets/coffee-mode"]
+	path = emacs.d/snippets/coffee-mode
+	url = git@github.com:hans/yasnippet-coffee-mode.git
