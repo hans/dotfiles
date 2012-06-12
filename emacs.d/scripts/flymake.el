@@ -65,19 +65,18 @@
 ;;; PHP
 (add-hook 'php-mode-hook (lambda () (flymake-mode 1)))
 
-;;; Javascript (JSLint with Node.js)
+;;; Javascript (JSHint with Node.js)
 
-(defun flymake-jslint-init ()
+(defun flymake-jshint-init ()
   (let* ((temp-file (flymake-init-create-temp-buffer-copy
                       'flymake-create-temp-inplace))
          (local-file (file-relative-name
                        temp-file
                        (file-name-directory buffer-file-name))))
-    (list "/usr/local/bin/jslint" (list "--terse" "--sloppy" "--indent" "2"
-                                        local-file))))
+    (list "/usr/local/bin/jshint" (list local-file))))
 
-(provide 'flymake-jslint)
-(require 'flymake-jslint)
+(provide 'flymake-jshint)
+(require 'flymake-jshint)
 (add-hook 'js-mode-hook (lambda () (flymake-mode 1)))
 
 ;;; CSS
@@ -99,7 +98,7 @@
       (cons
        ;; JS
        '(".+\\.js$"
-         flymake-jslint-init
+         flymake-jshint-init
          flymake-simple-cleanup
          flymake-get-real-file-name)
 
@@ -111,7 +110,7 @@
 (setq flymake-err-line-patterns
       (cons
        ;; JS
-       '("\\(.+\\)\(\\([[:digit:]]+\\)\):\\(.+\\)" 1 2 nil 3)
+       '("^\\(.+\\): line \\([[:digit:]]+\\), col \\([[:digit:]]+\\), \\(.+\\)$" 1 2 3 4)
 
        ;; CSS
        (cons
