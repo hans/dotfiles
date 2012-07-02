@@ -8,7 +8,7 @@
 
 ;; Mode specific indent sizes
 ;; TODO: Consider putting these in their own mode specific inits
-(setq c-basic-offset 4)
+(setq c-basic-offset 2)
 (setq css-indent-offset 2)
 (setq sh-basic-offset 2)
 (set-default 'javascript-indent-level 2)
