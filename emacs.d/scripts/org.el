@@ -1,4 +1,10 @@
-(add-hook 'org-mode-hook 'turn-on-auto-fill)
+(add-hook 'org-mode-hook
+          (lambda ()
+            (turn-on-auto-fill)
+
+            ;; Disable electric-indent-mode in Org buffers
+            (set (make-local-variable 'electric-indent-functions)
+                 (list (lambda (arg) 'no-indent)))))
 
 (setq org-directory "~/org/"
       org-default-notes-file (concat org-directory "notes.org")
