@@ -1,4 +1,9 @@
-;;; Javscript is fun
+;;; Javascript is fun
 
-;; Standard js-mode
-(setq js-indent-level 2)
+(load "js2-mode/js2-mode")
+(require 'js2-mode)
+
+(setq-default js2-allow-rhino-new-expr-initializer nil
+              js2-global-externs '("setTimeout" "clearTimeout" "setInterval"
+                                   "clearInterval" "location" "console" "_"
+                                   "jQuery" "$"))

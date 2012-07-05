@@ -22,3 +22,6 @@
 [submodule "emacs.d/snippets/coffee-mode"]
 	path = emacs.d/snippets/coffee-mode
 	url = git@github.com:hans/yasnippet-coffee-mode.git
+[submodule "emacs.d/vendor/js2-mode"]
+	path = emacs.d/vendor/js2-mode
+	url = git://github.com/mooz/js2-mode.git
