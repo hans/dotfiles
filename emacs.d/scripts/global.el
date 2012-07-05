@@ -111,3 +111,7 @@
    (if mark-active (list (region-beginning) (region-end))
      (list (line-beginning-position)
            (line-beginning-position 2)))))
+
+;; Auto fill everywhere except code (still in code comments)
+(setq auto-mode-alist (cons '("*" . auto-fill-mode) auto-mode-alist)
+      comment-auto-fill-only-comments t)
