@@ -56,6 +56,7 @@
 ;; --- Text manipulation --- ;;
 
 (global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "C-h") 'backward-delete-char)
 
 ;; Indenting and alignment
 (global-set-key [(f8)]         'indent-region)
@@ -98,6 +99,8 @@
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 
 ;; --- Etc. commands --- ;;
+
+(global-set-key (kbd "<f1>") 'help-command)
 
 ;; Keyboard macros
 (global-set-key [(shift f4)] 'kmacro-start-macro-or-insert-counter)
