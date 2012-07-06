@@ -195,3 +195,8 @@ point."
           (replace-string new-quotes (concat "\\" new-quotes) nil start end)
           (replace-string (concat "\\" old-quotes) old-quotes nil start end)))
     (error "Point isn't in a string")))
+
+(defun recompile-config ()
+  "Recompile Emacs config files"
+  (interactive)
+  (byte-recompile-directory config-directory 0))
