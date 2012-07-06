@@ -124,3 +124,6 @@
 
 ;; Highlight the current line
 (global-hl-line-mode 1)
+
+;; Enable forward-word / backward-word navigation in camelCased words
+(global-subword-mode 1)
