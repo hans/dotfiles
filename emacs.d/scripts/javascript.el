@@ -5,7 +5,8 @@
 (require 'js2-mode)
 (require 'js2-imenu-extras)
 
-(setq-default js2-allow-rhino-new-expr-initializer nil
+(setq-default js2-basic-offset 2
+              js2-allow-rhino-new-expr-initializer nil
               js2-global-externs '("setTimeout" "clearTimeout" "setInterval"
                                    "clearInterval" "location" "console" "_"
                                    "jQuery" "$"))
