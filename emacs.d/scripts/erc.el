@@ -3,8 +3,9 @@
 (require 'erc)
 
 ;; load modules
-(setq erc-modules (quote
-                   (autojoin button completion fill irccontrols list log match move-to-prompt netsplit networks noncommands readonly ring stamp track)))
+(setq erc-modules '(autojoin button completion irccontrols list log match
+                             move-to-prompt netsplit networks noncommands
+                             readonly ring stamp track))
 
 ;; change prompt to >
 (setq erc-prompt ">")
