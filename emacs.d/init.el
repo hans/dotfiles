@@ -1,5 +1,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
+(setq config-directory "~/.emacs.d")
+
 (setq custom-file "~/.emacs.d/scripts/custom.el")
 (load custom-file 'noerror)
 
