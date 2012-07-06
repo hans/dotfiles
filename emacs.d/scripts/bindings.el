@@ -71,6 +71,9 @@
 (global-set-key (kbd "C-k") 'kill-and-join-forward)
 (global-set-key (kbd "C-S-k") 'kill-line)
 
+;; Toggle between single and double quotes
+(global-set-key (kbd "C-\"") 'toggle-quotes)
+
 ;; --- Text navigation -- ;;
 
 ;; Find matching parens
