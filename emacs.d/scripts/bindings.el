@@ -1,4 +1,4 @@
-;;; Global key bindigns
+;;; Global key bindings
 
 (global-set-key (kbd "RET") 'newline-and-indent)
 
@@ -7,6 +7,12 @@
 (global-set-key [(control kp-4)] 'shrink-window-horizontally)
 (global-set-key [(control kp-8)] 'enlarge-window)
 (global-set-key [(control kp-2)] 'shrink-window)
+;; Map the window manipulation keys to meta 0, 1, 2, o
+(global-set-key (kbd "M-3") 'split-window-horizontally) ; was digit-argument
+(global-set-key (kbd "M-2") 'split-window-vertically) ; was digit-argument
+(global-set-key (kbd "M-1") 'delete-other-windows) ; was digit-argument
+(global-set-key (kbd "M-0") 'delete-window) ; was digit-argument
+(global-set-key (kbd "M-o") 'other-window) ; was facemenu-keymap
 
 ;; Find stuff
 (global-set-key [(f2)]              'ack-and-a-half)
@@ -28,15 +34,8 @@
 (global-set-key [(meta f8)]    'align-regexp)
 
 ;; Version control and change related
-(global-set-key [(control f9)] (lambda () (interactive) (magit-status default-directory)))
 (global-set-key [(f9)]         (lambda () (interactive) (magit-status default-directory)))
 
-;; Map the window manipulation keys to meta 0, 1, 2, o
-(global-set-key (kbd "M-3") 'split-window-horizontally) ; was digit-argument
-(global-set-key (kbd "M-2") 'split-window-vertically) ; was digit-argument
-(global-set-key (kbd "M-1") 'delete-other-windows) ; was digit-argument
-(global-set-key (kbd "M-0") 'delete-window) ; was digit-argument
-(global-set-key (kbd "M-o") 'other-window) ; was facemenu-keymap
 ;; Replace dired's M-o
 (add-hook 'dired-mode-hook (lambda () (define-key dired-mode-map (kbd "M-o") 'other-window))) ; was dired-omit-mode
 ;; Replace ibuffer's M-o
@@ -81,3 +80,6 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-c q") 'er/mark-outside-quotes)
 (global-set-key (kbd "C-c Q") 'er/mark-inside-quotes)
+
+;; imenu
+(global-set-key (kbd "C-j") 'imenu)
