@@ -9,7 +9,7 @@
             (electric-indent-mode -1)
 
             ;; use js-mode to view compiled code
-            (setq coffee-js-mode 'js-mode)
+            (setq coffee-js-mode 'js2-mode)
 
             ;; Compile on save
             (when (file-exists-p (buffer-file-name))
