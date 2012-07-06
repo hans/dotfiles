@@ -6,6 +6,7 @@
                     (mode . html-mode)
                     (mode . css-mode)
                     (mode . js-mode)
+                    (mode . js2-mode)
                     (mode . coffee-mode)
                     (mode . ruby-mode)
                     (mode . clojure-mode)
