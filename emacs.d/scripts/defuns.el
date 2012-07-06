@@ -154,3 +154,8 @@ point."
           (comment-or-uncomment-region (mark) (point))
         (comment-or-uncomment-region (point) (mark)))
     (comment-or-uncomment-line lines)))
+
+(defun delete-this-file ()
+  "Delete the file displayed in the current buffer."
+  (delete-file (buffer-file-name))
+  (kill-this-buffer))
