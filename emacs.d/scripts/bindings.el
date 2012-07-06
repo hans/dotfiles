@@ -94,6 +94,9 @@
 ;; jump to line (I don't use screen recentering)
 (global-set-key (kbd "C-l") 'goto-line)
 
+;; jump to head chars
+(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+
 ;; --- Etc. commands --- ;;
 
 ;; Keyboard macros
