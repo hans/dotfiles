@@ -120,4 +120,4 @@
 (require 'smooth-scroll)
 
 ;; Two spaces after a period? That's silly..
-(setq-default 'sentence-end-double-space nil)
+(setq-default sentence-end-double-space nil)
