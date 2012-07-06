@@ -1,8 +1,5 @@
 ;;; Global key bindigns
 
-;; How to Define Keyboard Shortcuts in Emacs
-;; http://xahlee.org/emacs/keyboard_shortcuts.html
-
 (global-set-key (kbd "RET") 'newline-and-indent)
 
 ;; Window manipulation
@@ -79,3 +76,8 @@
 
 ;; Cycle through buffers
 (global-set-key (kbd "<C-tab>") 'bury-buffer)
+
+;; expand-region
+(global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "C-c q") 'er/mark-outside-quotes)
+(global-set-key (kbd "C-c Q") 'er/mark-inside-quotes)
