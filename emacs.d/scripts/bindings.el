@@ -76,6 +76,10 @@
 
 ;; --- Text navigation -- ;;
 
+;; Navigate by paragraph
+(global-set-key (kbd "M-p") 'backward-paragraph)
+(global-set-key (kbd "M-n") 'forward-paragraph)
+
 ;; Find matching parens
 (global-set-key (kbd "C-'") 'match-paren)
 
