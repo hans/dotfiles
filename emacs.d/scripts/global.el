@@ -121,3 +121,6 @@
 
 ;; Two spaces after a period? That's silly..
 (setq-default sentence-end-double-space nil)
+
+;; Highlight the current line
+(global-hl-line-mode 1)
