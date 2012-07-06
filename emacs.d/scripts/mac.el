@@ -12,6 +12,9 @@
 (when (fboundp 'ns-toggle-fullscreen)
   (global-set-key (kbd "M-RET") 'ns-toggle-fullscreen))
 
+;; Don't open files from Finder, etc. in new frames
+(setq ns-pop-up-frames nil)
+
 ;; Prevent anti aliasing
 ;; (setq mac-allow-anti-aliasing nil)
 
