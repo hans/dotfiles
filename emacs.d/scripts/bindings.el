@@ -83,3 +83,6 @@
 
 ;; imenu
 (global-set-key (kbd "C-j") 'imenu)
+
+;; jump to line (I don't use screen recentering)
+(global-set-key (kbd "C-l") 'goto-line)
