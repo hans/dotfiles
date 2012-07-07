@@ -25,6 +25,3 @@
 [submodule "emacs.d/vendor/js2-mode"]
 	path = emacs.d/vendor/js2-mode
 	url = git://github.com/mooz/js2-mode.git
-[submodule "emacs.d/vendor/coffee-mode"]
-	path = emacs.d/vendor/coffee-mode
-	url = git@github.com:hans/coffee-mode.git
