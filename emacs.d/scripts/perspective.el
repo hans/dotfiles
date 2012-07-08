@@ -5,12 +5,20 @@
   "Define a perspective with a name NAME which loads when a file that matches
 PATH-MATCH is opened. Set up a keybinding to load the perspective manually by
 pressing `C-x p KEY`. Run BODY when the perspective loads."
-  (let ((funsym (intern (concat "persp/" (symbol-name name))))
+  (let* ((name-str (symbol-name name))
+        (funsym (intern (concat "persp/" name-str)))
         (key (concat "C-x p " key)))
     ;; Define perspective trigger key
     `(progn
        (define-key persp-mode-map (kbd ,key) ',funsym)
 
        (defun ,funsym ()
-         (persp-switch ,(symbol-name name))
-         ,@body))))
+         (interactive)
+         (persp-switch ,name-str)
+         (unless (gethash ,name-str perspectives-hash)
+           ;; Perspective has not been activated in this session. Run the
+           ;; provided init code.
+           ,@body)))))
+
+(defpersp irc nil "i"
+  (erc))
