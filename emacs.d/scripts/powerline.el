@@ -3,10 +3,11 @@
 (require 'cl-macs)
 
 (defvar mode-abbr-alist
-  '(("Lisp Interaction" . "lisp")
+  '(("Clojure" . "clj")
     ("Emacs-Lisp" . "el")
+    ("Lisp Interaction" . "lisp")
+    ("Magit" . "git")
     ("Paredit" . "par")
-    ("Clojure" . "clj")
     ("RE Builder" . "re")))
 
 (defun abbreviate-mode-list-str (mode-list-str)
