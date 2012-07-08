@@ -1,9 +1,32 @@
 (load "powerline/powerline")
 (require 'powerline)
+(require 'cl-macs)
+
+(defvar mode-abbr-alist
+  '(("Lisp Interaction" . "lisp")
+    ("Emacs-Lisp" . "el")
+    ("Paredit" . "par")
+    ("Clojure" . "clj")
+    ("RE Builder" . "re")))
+
+(defun abbreviate-mode-list-str (mode-list-str)
+  (cl-loop for (orig . replace)
+           in mode-abbr-alist
+           do (setq mode-list-str
+                    (replace-regexp-in-string orig replace mode-list-str t)))
+  mode-list-str)
 
 (set-face-attribute 'mode-line nil
                     :background "grey18"
                     :box nil)
+
+(defpowerline major-mode-abbr
+  (propertize (abbreviate-mode-list-str (format-mode-line mode-name))))
+
+(defpowerline minor-modes-abbr
+  (propertize (replace-regexp-in-string
+               "^ *" ""
+               (abbreviate-mode-list-str (format-mode-line minor-mode-alist)))))
 
 (defpowerline perspective
   (propertize
@@ -21,8 +44,8 @@
                 (powerline-rmw            'left   nil  )
                 (powerline-buffer-id      'left   nil  powerline-color1  )
                 (powerline-perspective    'left powerline-color1)
-                (powerline-major-mode     'left        powerline-color1  )
-                (powerline-minor-modes    'left        powerline-color1  )
+                (powerline-major-mode-abbr 'left        powerline-color1  )
+                (powerline-minor-modes-abbr 'left        powerline-color1  )
                 (powerline-narrow         'left        powerline-color1  powerline-color2  )
                 (powerline-vc             'center                        powerline-color2  )
                 (powerline-make-fill                                     powerline-color2  )
