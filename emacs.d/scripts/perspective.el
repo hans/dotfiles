@@ -20,7 +20,6 @@ defpersp instead, which adds to this alist.")
            do (progn
                 (persp-switch persp-name)
                 (let ((persp (gethash persp-name perspectives-hash)))
-                  (print persp)
                   ;; Add the buffer to the fetched perspective's buffer list
                   (push (current-buffer) (persp-buffers persp))))))
 
