@@ -49,9 +49,23 @@ PATH_MATCH."
 
          ,(if on-persp-init
               `(unless (gethash ,name-str perspectives-hash)
-                ;; Perspective has not been activated in this session. Run the
-                ;; provided init code.
-                ,@on-persp-init))))))
+                 ;; Perspective has not been activated in this session. Run the
+                 ;; provided init code.
+                 ,@on-persp-init))))))
 
 (defpersp irc nil "i"
-  (erc))
+  :on-persp-init
+  ((erc)))
+
+(defpersp dotfiles "Projects/dotfiles" "d"
+  :on-persp-init
+  ((find-file "~/Projects/dotfiles/emacs.d/init.el")))
+
+(defpersp blog "Projects/hans.github.com" "b"
+  :on-persp-init
+  ((interactive)
+   (dired "~/Projects/hans.github.com")))
+
+(defpersp create "Projects/CreateApp" "c"
+  :on-persp-init
+  ((find-file-noselect "~/Projects/CreateApp/www/index.html")))
