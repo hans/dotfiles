@@ -27,4 +27,4 @@
 	url = git://github.com/mooz/js2-mode.git
 [submodule "emacs.d/vendor/powerline"]
 	path = emacs.d/vendor/powerline
-	url = git://github.com/jonathanchu/emacs-powerline.git
+	url = git@github.com:hans/emacs-powerline.git
