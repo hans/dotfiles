@@ -1,3 +1,5 @@
+(require 'cl-macs)
+
 (require 'perspective)
 (persp-mode 1)
 
@@ -8,6 +10,21 @@ alist, the perspective for the corresponding key will be initialized.
 
 This alist may be modified manually, but is probably best left alone: use
 defpersp instead, which adds to this alist.")
+
+(defun persp-path-match (path)
+  (cl-loop for (persp-name . path-match)
+           in persp-path-match-alist
+           when (string-match-p path-match path)
+
+           ;; Fetch the perspective by name
+           do (let ((persp (gethash persp-name perspectives-hash)))
+                ;; Add the buffer to the fetched perspective's buffer list
+                (push (current-buffer) (persp-buffers persp)))))
+
+(add-hook 'find-file-hook
+          (lambda () (persp-path-match (buffer-file-name))))
+(add-hook 'dired-after-readin-hook
+          (lambda () (persp-path-match (dired-current-directory))))
 
 (defmacro defpersp (name path-match key
                          &optional &key on-persp-init on-path-match)
