@@ -12,14 +12,17 @@ This alist may be modified manually, but is probably best left alone: use
 defpersp instead, which adds to this alist.")
 
 (defun persp-path-match (path)
-  (cl-loop for (persp-name . path-match)
+    (cl-loop for (persp-name . path-match)
            in persp-path-match-alist
            when (string-match-p path-match path)
 
            ;; Fetch the perspective by name
-           do (let ((persp (gethash persp-name perspectives-hash)))
-                ;; Add the buffer to the fetched perspective's buffer list
-                (push (current-buffer) (persp-buffers persp)))))
+           do (progn
+                (persp-switch persp-name)
+                (let ((persp (gethash persp-name perspectives-hash)))
+                  (print persp)
+                  ;; Add the buffer to the fetched perspective's buffer list
+                  (push (current-buffer) (persp-buffers persp))))))
 
 (add-hook 'find-file-hook
           (lambda () (persp-path-match (buffer-file-name))))
