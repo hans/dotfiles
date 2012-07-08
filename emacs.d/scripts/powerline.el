@@ -9,7 +9,8 @@
     ("Magit" . "git")
     ("Markdown" . "md")
     ("Paredit" . "par")
-    ("RE Builder" . "re")))
+    ("RE Builder" . "re")
+    ("Shell-script" . "sh")))
 
 (defun abbreviate-mode-list-str (mode-list-str)
   (cl-loop for (orig . replace)
