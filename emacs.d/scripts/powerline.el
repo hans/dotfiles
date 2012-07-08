@@ -7,6 +7,7 @@
     ("Emacs-Lisp" . "el")
     ("Lisp Interaction" . "lisp")
     ("Magit" . "git")
+    ("Markdown" . "md")
     ("Paredit" . "par")
     ("RE Builder" . "re")))
 
