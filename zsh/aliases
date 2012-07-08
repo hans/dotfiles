@@ -22,6 +22,8 @@ alias gp='git push'
 alias gst='git status -sb'
 # thanks holman, this rules
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+# clean + update all git submodules
+alias gus="git submodule foreach 'git reset --hard HEAD; git checkout master; git pull origin master'"
 
 ##### save some typing.. #####
 alias s='sudo'
