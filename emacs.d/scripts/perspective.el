@@ -48,13 +48,14 @@ PATH_MATCH."
 
        (defun ,funsym ()
          (interactive)
-         (persp-switch ,name-str)
 
          ,(if on-persp-init
               `(unless (gethash ,name-str perspectives-hash)
                  ;; Perspective has not been activated in this session. Run the
                  ;; provided init code.
-                 ,@on-persp-init))))))
+                 ,@on-persp-init))
+
+         (persp-switch ,name-str)))))
 
 (defpersp irc nil "i"
   :on-persp-init
