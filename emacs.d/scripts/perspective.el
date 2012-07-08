@@ -67,9 +67,8 @@ PATH_MATCH."
 
 (defpersp blog "Projects/hans.github.com" "b"
   :on-persp-init
-  ((interactive)
-   (dired "~/Projects/hans.github.com")))
+  ((dired "~/Projects/hans.github.com")))
 
 (defpersp create "Projects/CreateApp" "c"
   :on-persp-init
-  ((find-file-noselect "~/Projects/CreateApp/www/index.html")))
+  ((find-file "~/Projects/CreateApp/www/index.html")))
