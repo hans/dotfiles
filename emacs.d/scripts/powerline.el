@@ -9,7 +9,7 @@
   (propertize
    (if persp-curr
        (concat "("
-               (substring (persp-name persp-curr) 0 1)
+               (substring (persp-name persp-curr) 0 2)
                ")")
      "")
    'face (powerline-make-face color1)))
