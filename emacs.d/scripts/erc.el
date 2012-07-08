@@ -7,6 +7,8 @@
  erc-nick "hansengel"
  erc-user-full-name "Hans Engel"
 
+ erc-autojoin-channels-alist '(("freenode.net" "#clojure" "#haskell"))
+
  ;; load modules
  erc-modules '(autojoin button completion irccontrols list log match
                         move-to-prompt netsplit networks noncommands
