@@ -5,6 +5,7 @@
 (defvar mode-abbr-alist
   '(("Clojure" . "clj")
     ("Emacs-Lisp" . "el")
+    ("Javascript-IDE" . "js")
     ("Lisp Interaction" . "lisp")
     ("Magit" . "git")
     ("Markdown" . "md")
