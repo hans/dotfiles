@@ -3,13 +3,15 @@
 (require 'cl-macs)
 
 (defvar mode-abbr-alist
-  '(("Clojure" . "clj")
+  '(("Abbrev" . "abbr")
+    ("Clojure" . "clj")
     ("Emacs-Lisp" . "el")
     ("JavaScript-IDE" . "js")
     ("Lisp Interaction" . "lisp")
     ("Magit" . "git")
     ("Markdown" . "md")
     ("Paredit" . "par")
+    ("Python" . "py")
     ("RE Builder" . "re")
     ("Shell-script" . "sh")))
 
