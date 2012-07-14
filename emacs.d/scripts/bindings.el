@@ -114,3 +114,7 @@
 
 ;; Repeat the last command that was typed into the minibuffer
 (global-set-key [(control z)] 'repeat-complex-command) ; was suspend-frame
+
+;; Switch C-x u (undo) and M-u (subword-upcase)
+(global-set-key (kbd "C-x u") 'subword-upcase)
+(global-set-key (kbd "M-u") 'undo)
