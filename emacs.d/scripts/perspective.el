@@ -55,19 +55,3 @@ PATH_MATCH."
                  ,@on-persp-init))
 
          (persp-switch ,name-str)))))
-
-(defpersp irc nil "i"
-  :on-persp-init
-  ((erc)))
-
-(defpersp dotfiles "Projects/dotfiles" "d"
-  :on-persp-init
-  ((find-file "~/Projects/dotfiles/emacs.d/init.el")))
-
-(defpersp blog "Projects/hans.github.com" "b"
-  :on-persp-init
-  ((dired "~/Projects/hans.github.com")))
-
-(defpersp create "Projects/CreateApp" "c"
-  :on-persp-init
-  ((find-file "~/Projects/CreateApp/www/index.html")))
