@@ -69,3 +69,6 @@ PATH_MATCH."
                  ,@on-persp-init))
 
          (persp-switch ,name-str)))))
+
+;; Define main perspective
+(defpersp main nil "m")
