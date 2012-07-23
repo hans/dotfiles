@@ -1,5 +1,6 @@
 (load "powerline/powerline")
 (require 'powerline)
+(require 'cl)
 (require 'cl-macs)
 
 (defvar mode-abbr-alist
@@ -60,3 +61,11 @@
                 (powerline-column         'right       powerline-color1  )
                 (powerline-percent        'right  nil  powerline-color1  )
                 (powerline-make-text      "  "    nil  )))))
+
+;; Flash the center of the powerline a certain color for a given amount of time
+(defun* flash-powerline (color &optional (time 1))
+  (let ((old-color powerline-color2)
+        (color-var (make-local-variable 'powerline-color2)))
+    (set color-var color)
+    (sit-for time)
+    (set color-var old-color)))
