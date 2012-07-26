@@ -1,6 +1,6 @@
 ;; ipython
-(setq py-python-command "ipython") ; bug?
-(require 'ipython)
+;; (setq py-python-command "ipython") ; bug?
+;; (require 'ipython)
 
 ;; Use python-mode instead of built-in python package
 (require 'python-mode)
