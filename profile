@@ -9,8 +9,8 @@ fi
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
-# Cabal binaries
-export PATH=$PATH:~/.cabal/bin
+# Cabal, Python binaries
+export PATH=/usr/local/share/python:$PATH:~/.cabal/bin
 
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
