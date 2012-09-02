@@ -1,15 +1,35 @@
-(add-hook 'org-mode-hook
-          (lambda ()
-            (turn-on-auto-fill)
+(load-library "reftex")
 
-            ;; Disable electric-indent-mode in Org buffers
-            (set (make-local-variable 'electric-indent-functions)
-                 (list (lambda (arg) 'no-indent)))))
+(add-hook 'org-mode-hook
+	  (lambda ()
+	    (turn-on-auto-fill)
+
+	    ;; Disable electric-indent-mode in Org buffers
+	    (set (make-local-variable 'electric-indent-functions)
+		 (list (lambda (arg) 'no-indent)))
+
+	    (org-mode-reftex-setup)))
 
 (setq org-directory "~/org/"
       org-default-notes-file (concat org-directory "notes.org")
       org-M-RET-may-split-line nil
       org-todo-keywords '((sequence "TODO" "IN PROGRESS" "DONE"))
-      org-src-fontify-natively t)
+      org-src-fontify-natively t
+
+      ;; Org manual 11.7.1
+      org-pretty-entities t
+
+      org-export-latex-listings x
+      org-export-latex-minted-options '(("frame" "lines") ("fontsize" "\\footnotesize")
+                                        ("linenos" "")))
 
 (define-key global-map (kbd "C-c c") 'org-capture)
+
+(defun org-mode-reftex-setup ()
+  (and (buffer-file-name)
+       (file-exists-p (buffer-file-name))
+       (reftex-parse-all))
+
+  (define-key org-mode-map (kbd "C-c )") 'reftex-citation)
+
+  (setq reftex-default-bibliography '("default.bib")))
