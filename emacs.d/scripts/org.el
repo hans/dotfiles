@@ -19,9 +19,11 @@
       ;; Org manual 11.7.1
       org-pretty-entities t
 
-      org-export-latex-listings x
+      org-export-latex-listings t
       org-export-latex-minted-options '(("frame" "lines") ("fontsize" "\\footnotesize")
-                                        ("linenos" "")))
+                                        ("linenos" ""))
+
+      org-babel-confirm-evaluate nil)
 
 (define-key global-map (kbd "C-c c") 'org-capture)
 
