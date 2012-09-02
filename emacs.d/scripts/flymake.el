@@ -79,6 +79,17 @@
 (require 'flymake-jshint)
 (add-hook 'js-mode-hook (lambda () (flymake-mode 1)))
 
+;;; Python
+
+(defun flymake-pylint-init ()
+  (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                      'flymake-create-temp-inplace))
+         (local-file (file-relative-name
+                       temp-file
+                       (file-name-directory buffer-file-name))))
+    (list "/usr/local/share/python/epylint" (list local-file))))
+(add-hook 'python-mode-hook (lambda () (flymake-mode 1)))
+
 (setq flymake-allowed-file-name-masks
       (cons
        ;; JS
@@ -86,7 +97,12 @@
          flymake-jshint-init
          flymake-simple-cleanup
          flymake-get-real-file-name)
-       flymake-allowed-file-name-masks))
+
+       (cons
+        ;; Python
+        '("\\.py" flymake-pylint-init)
+
+        flymake-allowed-file-name-masks)))
 
 (setq flymake-err-line-patterns
       (cons
@@ -96,5 +112,4 @@
 
 ;; RFringe: Display number and location of flymake errors/warnings on the fringe
 ;; Load custom .el in .emacs.d/vendor
-(load "rfringe")
-(require 'rfringe)
+;; (vendor 'rfringe)
