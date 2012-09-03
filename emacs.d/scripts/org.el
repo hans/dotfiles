@@ -35,3 +35,14 @@
   (define-key org-mode-map (kbd "C-c )") 'reftex-citation)
 
   (setq reftex-default-bibliography '("default.bib")))
+
+;; org-babel
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '( (clojure . t)
+    (haskell . t)
+    (python . t)
+    (sh . t)
+    (ruby . t)
+    (js . t)))
