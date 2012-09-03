@@ -103,14 +103,14 @@
    (if mark-active (list (region-beginning) (region-end))
      (message "Copied line")
      (list (line-beginning-position)
-           (line-beginning-position 2)))))
+           (max 0 (1- (line-beginning-position 2)))))))
 
 (defadvice kill-region (before slick-cut activate compile)
   "When called interactively with no active region, kill a single line instead."
   (interactive
    (if mark-active (list (region-beginning) (region-end))
      (list (line-beginning-position)
-           (line-beginning-position 2)))))
+           (max 0 (1- (line-beginning-position 2)))))))
 
 ;; Auto fill everywhere except code (still in code comments)
 (setq auto-mode-alist (cons '("*" . auto-fill-mode) auto-mode-alist)
