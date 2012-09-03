@@ -86,6 +86,11 @@
 ;; Mark entire buffer
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 
+;; Use mark (bypassing `transient-mark-mode')
+(global-set-key (kbd "C-\\") 'push-mark-no-activate)
+(global-set-key (kbd "M-\\") 'jump-to-mark)
+(global-set-key (kbd "C-M-\\") 'exchange-point-and-mark-no-activate)
+
 ;; C-a should jump to the first non-whitespace char.
 ;; M-m should jump to the actual start of the line.
 (global-set-key (kbd "C-a") 'back-to-indentation)
