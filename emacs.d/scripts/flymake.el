@@ -112,4 +112,4 @@
 
 ;; RFringe: Display number and location of flymake errors/warnings on the fringe
 ;; Load custom .el in .emacs.d/vendor
-;; (vendor 'rfringe)
+(vendor 'rfringe)
