@@ -18,9 +18,3 @@
   (let ((py-shell-name "ipython")
         (py-python-command-args '("-i" "--colors=LightBG")))
     (py-shell)))
-
-;; documentation
-(vendor 'pylookup)
-(setq pylookup-dir "~/.emacs.d/vendor/pylookup"
-      pylookup-program (concat pylookup-dir "/pylookup.py")
-      pylookup-db-file (concat pylookup-dir "/pylookup.db"))
