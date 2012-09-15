@@ -18,6 +18,8 @@
 
       ;; Org manual 11.7.1
       org-pretty-entities t
+      org-entities-user
+        '(("implies" "\\implies" t "&rArr;" "=>" "=>" "⇒"))
 
       org-export-latex-listings t
       org-export-latex-minted-options '(("frame" "lines") ("fontsize" "\\footnotesize")
