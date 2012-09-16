@@ -31,6 +31,3 @@
 [submodule "emacs.d/vendor/gaeunit-mode"]
 	path = emacs.d/vendor/gaeunit-mode
 	url = git@github.com:hans/gaeunit-mode.git
-[submodule "emacs.d/vendor/pylookup"]
-	path = emacs.d/vendor/pylookup
-	url = git://github.com/tsgates/pylookup.git

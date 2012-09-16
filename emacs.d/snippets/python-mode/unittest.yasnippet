@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: unittest
+# key: unittest
+# expand-env: ((yas/indent-line 'fixed))
+# --
+import unittest
+
+class $1TestCase(unittest.TestCase):
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    def test_$2(self):
+        $0
