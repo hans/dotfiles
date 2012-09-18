@@ -1,7 +1,6 @@
 (load "powerline/powerline")
 (require 'powerline)
 (require 'cl)
-(require 'cl-macs)
 
 (defvar mode-abbr-alist
   '(("Abbrev" . "abbr")
@@ -17,10 +16,11 @@
     ("Shell-script" . "sh")))
 
 (defun abbreviate-mode-list-str (mode-list-str)
-  (cl-loop for (orig . replace)
-           in mode-abbr-alist
-           do (setq mode-list-str
-                    (replace-regexp-in-string orig replace mode-list-str t)))
+  (loop for pair in mode-abbr-alist
+        do (let ((orig (car pair))
+                 (replace (cdr pair)))
+             (setq mode-list-str
+                   (replace-regexp-in-string orig replace mode-list-str t))))
   mode-list-str)
 
 (set-face-attribute 'mode-line nil

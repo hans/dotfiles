@@ -1,4 +1,4 @@
-(require 'cl-macs)
+(require 'cl)
 
 (require 'perspective)
 (persp-mode 1)
@@ -19,21 +19,22 @@ This alist may be modified manually, but is probably best left alone: use
 defpersp instead, which adds to this alist.")
 
 (defun persp-path-match (path)
-    (cl-loop for (persp-name . path-match)
-           in persp-path-match-alist
-           when (string-match-p (car path-match) path)
+  (loop for pair in persp-path-match-alist
 
-           ;; Fetch the perspective by name
-           do (progn
-                (persp-switch persp-name)
-                (let ((persp (gethash persp-name perspectives-hash))
-                      (on-match (cadr path-match)))
-                  ;; Run an on-match hook if it is set
-                  (if on-match
-                      (funcall on-match))
+        ;; Fetch the perspective by name
+        do (let ((persp-name (car pair))
+                 (path-match (cdr pair)))
+             (when (string-match-p (car path-match) path)
+               (progn
+                 (persp-switch persp-name)
+                 (let ((persp (gethash persp-name perspectives-hash))
+                       (on-match (cadr path-match)))
+                   ;; Run an on-match hook if it is set
+                   (if on-match
+                       (funcall on-match))
 
-                  ;; Add the buffer to the fetched perspective's buffer list
-                  (push (current-buffer) (persp-buffers persp))))))
+                   ;; Add the buffer to the fetched perspective's buffer list
+                   (push (current-buffer) (persp-buffers persp))))))))
 
 (add-hook 'find-file-hook
           (lambda () (persp-path-match (buffer-file-name))))
