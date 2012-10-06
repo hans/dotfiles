@@ -8,6 +8,8 @@
 	    (set (make-local-variable 'electric-indent-functions)
 		 (list (lambda (arg) 'no-indent)))
 
+	    (add-to-list 'org-export-latex-packages-alist '("" "minted"))
+
 	    (org-mode-reftex-setup)))
 
 (setq org-directory "~/org/"
@@ -21,7 +23,7 @@
       org-entities-user
         '(("implies" "\\implies" t "&rArr;" "=>" "=>" "⇒"))
 
-      org-export-latex-listings t
+      org-export-latex-listings 'minted
       org-export-latex-minted-options '(("frame" "lines") ("fontsize" "\\footnotesize")
                                         ("linenos" ""))
 
