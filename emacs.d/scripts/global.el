@@ -112,10 +112,6 @@
      (list (line-beginning-position)
            (max 0 (1- (line-beginning-position 2)))))))
 
-;; Auto fill everywhere except code (still in code comments)
-(setq auto-mode-alist (cons '("*" . auto-fill-mode) auto-mode-alist)
-      comment-auto-fill-only-comments t)
-
 ;; Keep cursor away from edges when scrolling up or down
 (require 'smooth-scroll)
 
