@@ -1,4 +1,8 @@
 ;;; Environment variables
 
-(setq exec-path (cons "~/.bin" (cons "/usr/local/bin" exec-path)))
-(setenv "PATH" (concat "~/.bin:/usr/local/bin:" (getenv "PATH")))
+(setq path-extras '("~/.bin" "/usr/local/bin" "/usr/texbin" "/usr/local/share/python")
+      exec-path (nconc path-extras exec-path))
+
+(setenv "PATH" (concat (mapconcat 'identity path-extras ":")
+                       ":"
+                       (getenv "PATH")))
