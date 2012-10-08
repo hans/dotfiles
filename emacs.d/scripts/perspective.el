@@ -27,14 +27,15 @@ defpersp instead, which adds to this alist.")
              (when (string-match-p (car path-match) path)
                (progn
                  (persp-switch persp-name)
-                 (let ((persp (gethash persp-name perspectives-hash))
-                       (on-match (cadr path-match)))
+                 (let* ((persp (gethash persp-name perspectives-hash))
+                        (buffers (persp-buffers persp))
+                        (on-match (cadr path-match)))
                    ;; Run an on-match hook if it is set
                    (if on-match
                        (funcall on-match))
 
                    ;; Add the buffer to the fetched perspective's buffer list
-                   (push (current-buffer) (persp-buffers persp))))))))
+                   (push (current-buffer) buffers)))))))
 
 (add-hook 'find-file-hook
           (lambda () (persp-path-match (buffer-file-name))))
