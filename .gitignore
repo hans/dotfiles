@@ -17,6 +17,11 @@ emacs.d/url
 emacs.d/tetris-scores
 emacs.d/scripts/private.el
 
+xmonad/xmonad.errors
+xmonad/xmonad-*
+
 zsh/cache
 
 *.elc
+*.hi
+*.o
