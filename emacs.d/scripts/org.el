@@ -77,4 +77,5 @@ footer a:hover { color: #aaa; }
     (python . t)
     (sh . t)
     (ruby . t)
-    (js . t)))
+    (js . t)
+    (dot . t)))
