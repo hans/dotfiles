@@ -8,10 +8,6 @@
 (when (boundp 'mouse-wheel-scroll-amount)
   (setq mouse-wheel-scroll-amount '(0.01)))
 
-;; Cocoa Emacs: M-RET to toggle fullscreen
-(when (fboundp 'ns-toggle-fullscreen)
-  (global-set-key (kbd "M-RET") 'ns-toggle-fullscreen))
-
 ;; Don't open files from Finder, etc. in new frames
 (setq ns-pop-up-frames nil)
 

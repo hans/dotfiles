@@ -223,3 +223,9 @@ point."
   (interactive)
   (exchange-point-and-mark)
   (deactivate-mark nil))
+
+(defun toggle-fullscreen ()
+  (interactive)
+  (set-frame-parameter
+   nil 'fullscreen
+   (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
