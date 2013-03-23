@@ -109,7 +109,3 @@
        ;; JS
        '("^\\(.+\\): line \\([[:digit:]]+\\), col \\([[:digit:]]+\\), \\(.+\\)$" 1 2 3 4)
        flymake-err-line-patterns))
-
-;; RFringe: Display number and location of flymake errors/warnings on the fringe
-;; Load custom .el in .emacs.d/vendor
-(vendor 'rfringe)
