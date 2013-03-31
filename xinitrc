@@ -11,7 +11,7 @@ xsetroot -cursor_name left_ptr
 xbacklight -set 20
 
 # Xmonad
-exec ck-launch-session xmonad
+exec xmonad
 
 # Background
-feh --bg-scale ~/Pictures/backgrounds/arch_simple.png
+feh --bg-scale ~/Pictures/background/clojure.jpeg
