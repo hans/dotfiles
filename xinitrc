@@ -8,7 +8,7 @@ setxkbmap us && xmodmap .colemak/xmodmap/xmodmap.colemak && xset r 66
 xsetroot -cursor_name left_ptr
 
 # Non-retina-burning backlight setting (MacBook)
-xbacklight -set 20
+xbacklight -set 15
 
 # Xmonad
 exec xmonad
