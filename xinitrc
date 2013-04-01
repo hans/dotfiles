@@ -2,7 +2,7 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 # Colemak
-setxkbmap us && xmodmap .colemak/xmodmap/xmodmap.colemak && xset r 66
+setxkbmap us && xmodmap ~/.colemak/xmodmap/xmodmap.colemak && xset r 66
 
 # Normal pointer
 xsetroot -cursor_name left_ptr
