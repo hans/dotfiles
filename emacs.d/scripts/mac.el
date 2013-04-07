@@ -1,15 +1,17 @@
 ;;; Cocoa!
 
-;; Hide the tool bar
-(when (fboundp 'tool-bar-mode)
-  (tool-bar-mode 0))
+(when (eq 'darwin system-type)
 
-;; Slow down the mouse wheel acceleration
-(when (boundp 'mouse-wheel-scroll-amount)
-  (setq mouse-wheel-scroll-amount '(0.01)))
+  ;; Hide the tool bar
+  (when (fboundp 'tool-bar-mode)
+    (tool-bar-mode 0))
 
-;; Don't open files from Finder, etc. in new frames
-(setq ns-pop-up-frames nil)
+  ;; Slow down the mouse wheel acceleration
+  (when (boundp 'mouse-wheel-scroll-amount)
+    (setq mouse-wheel-scroll-amount '(0.01)))
+
+  ;; Don't open files from Finder, etc. in new frames
+  (setq ns-pop-up-frames nil))
 
 ;; Prevent anti aliasing
 ;; (setq mac-allow-anti-aliasing nil)
