@@ -15,7 +15,8 @@
                  haskell-mode magit markdown-mode mustache-mode notify paredit
                  scala-mode yaml-mode yasnippet yasnippet-bundle j-mode
                  ace-jump-mode expand-region zenburn-theme ido-ubiquitous
-                 smooth-scroll perspective python-mode go-mode nrepl)
+                 smooth-scroll perspective python-mode go-mode nrepl
+                 color-theme-solarized)
   "Packages which should be installed upon launch")
 
 (dolist (p required-packages)

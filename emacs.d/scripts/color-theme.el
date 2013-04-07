@@ -5,10 +5,8 @@
 (setq color-theme-is-global t)
 (setq color-theme-is-cumulative t)
 
-(load-theme 'zenburn t)
-
-;; (vendor 'color-theme-solarized)
-;; (color-theme-solarized 'dark)
+(require 'color-theme-solarized)
+(color-theme-solarized 'dark)
 
 ;; (vendor 'color-theme-railscasts)
 ;; (color-theme-railscasts)
