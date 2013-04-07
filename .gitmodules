@@ -25,9 +25,9 @@
 [submodule "emacs.d/vendor/js2-mode"]
 	path = emacs.d/vendor/js2-mode
 	url = git://github.com/mooz/js2-mode.git
-[submodule "emacs.d/vendor/powerline"]
-	path = emacs.d/vendor/powerline
-	url = git@github.com:hans/emacs-powerline.git
 [submodule "emacs.d/vendor/gaeunit-mode"]
 	path = emacs.d/vendor/gaeunit-mode
 	url = git@github.com:hans/gaeunit-mode.git
+[submodule "emacs.d/vendor/powerline"]
+	path = emacs.d/vendor/powerline
+	url = git://github.com/milkypostman/powerline.git
