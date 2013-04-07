@@ -4,8 +4,8 @@
 
 Config {
     font = "xft:Fixed-8",
-    bgColor = "#000000",
-    fgColor = "#ffffff",
+    bgColor = "#002b36",
+    fgColor = "#657b83",
     position = Top,
     lowerOnStart = True,
     commands = [
