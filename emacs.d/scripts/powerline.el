@@ -1,4 +1,4 @@
-(load "powerline/powerline")
+(add-to-list 'load-path "~/.emacs.d/vendor/powerline")
 (require 'powerline)
 (require 'cl)
 
@@ -24,7 +24,7 @@
   mode-list-str)
 
 (set-face-attribute 'mode-line nil
-                    :background "grey18"
+                    :background "gray10"
                     :box nil)
 
 (defpowerline major-mode-abbr
@@ -42,30 +42,81 @@
                (substring (persp-name persp-curr) 0 2)
                ")")
      "")
-   'face (powerline-make-face color1)))
+   'face (powerline-make-face 'powerline-active1)))
 
-(setq-default
- mode-line-format
- (list "%e"
-       '(:eval (concat
-                (powerline-rmw            'left   nil  )
-                (powerline-buffer-id      'left   nil  powerline-color1  )
-                (powerline-perspective    'left powerline-color1)
-                (powerline-major-mode-abbr 'left        powerline-color1  )
-                (powerline-minor-modes-abbr 'left        powerline-color1  )
-                (powerline-narrow         'left        powerline-color1  powerline-color2  )
-                (powerline-vc             'center                        powerline-color2  )
-                (powerline-make-fill                                     powerline-color2  )
-                (powerline-row            'right       powerline-color1  powerline-color2  )
-                (powerline-make-text      ":"          powerline-color1  )
-                (powerline-column         'right       powerline-color1  )
-                (powerline-percent        'right  nil  powerline-color1  )
-                (powerline-make-text      "  "    nil  )))))
+;; Setup powerline theme
+(setq-default mode-line-format
+              '("%e"
+                (:eval
+                 (let* ((active (powerline-selected-window-active))
+                        (mode-line (if active 'mode-line 'mode-line-inactive))
+                        (face1 (if active 'powerline-active1
+                                 'powerline-inactive1))
+                        (face2 (if active 'powerline-active2
+                                 'powerline-inactive2))
+                        (separator-left
+                         (intern (format "powerline-%s-%s"
+                                         powerline-default-separator
+                                         (car powerline-default-separator-dir))))
+                        (separator-right
+                         (intern (format "powerline-%s-%s"
+                                         powerline-default-separator
+                                         (cdr powerline-default-separator-dir))))
+                        (lhs (list
+                              (powerline-raw "%*" nil 'l)
+                              (powerline-buffer-size nil 'l)
 
-;; Flash the center of the powerline a certain color for a given amount of time
-(defun* flash-powerline (color &optional (time 1))
-  (let ((old-color powerline-color2)
-        (color-var (make-local-variable 'powerline-color2)))
-    (set color-var color)
-    (sit-for time)
-    (set color-var old-color)))
+                              (powerline-raw mode-line-mule-info nil 'l)
+                              (powerline-buffer-id nil 'l)
+
+                              (when which-function-mode
+                                (concat
+                                 " ["
+                                 (powerline-which-func 'which-func nil)
+                                 "]"))
+
+
+                              (powerline-raw " ")
+                              (funcall separator-left mode-line face1)
+
+                              (when (boundp 'erc-modified-channels-object)
+                                (powerline-raw erc-modified-channels-object
+                                               face1 'l))
+
+                              (major-mode-abbr face1 'l)
+                              (powerline-process face1)
+                              (minor-modes-abbr face1 'l)
+                              (powerline-narrow face1 'l)
+
+                              (powerline-raw " " face1)
+                              (funcall separator-left face1 face2)
+
+                              (powerline-vc face2 'r)))
+                        (rhs (list
+                              (powerline-raw global-mode-string face2 'r)
+
+                              (funcall separator-right face2 face1)
+
+                              (powerline-raw "%4l" face1 'l)
+                              (powerline-raw ":" face1 'l)
+                              (powerline-raw "%3c" face1 'r)
+
+                              (funcall separator-right face1 mode-line)
+                              (powerline-raw " ")
+
+                              (powerline-raw "%6p" nil 'r)
+
+                              (powerline-hud face2 face1))))
+                   ;;(message "%s %s" separator-left (funcall 'powerline-wave-left mode-line face1))
+                   (concat
+                    (powerline-render lhs)
+                      (powerline-fill face2 (powerline-width rhs))
+                      (powerline-render rhs))))))
+
+;; ;; Flash the center of the powerline a certain color for a given amount of time
+;; (defun* flash-powerline (color &optional (time 1))
+;;   (let ((old-color powerline-color2)
+;;         (color-var (make-local-variable 'powerline-color2)))
+;;     (set color-var color)
+;;     (sit-for time)
+;;     (set color-var old-color)))
