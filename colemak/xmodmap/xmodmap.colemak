@@ -55,7 +55,7 @@ keycode  61 =        slash      question     questiondown        asciitilde
 keycode  66 =    Control_L     Control_L        Control_L         Control_L            
 keycode  94 =        minus    underscore           endash            emdash            
 keycode  65 =        space         space            space      nobreakspace            
-keycode 113 =  Mode_switch   Mode_switch                                               
+!keycode 113 =  Mode_switch   Mode_switch                                               
 clear Lock
 
 !clear Shift
@@ -126,6 +126,7 @@ add    Control = Control_L Control_R
 !keycode 110 = Pause Break
 !keycode 111 = Print Sys_Req
 !keycode 112 = KP_Divide XF86_Ungrab
+keycode 113 = Left
 !keycode 114 = Pause Break
 !keycode 115 = Super_L
 !keycode 116 = Super_R
