@@ -23,10 +23,6 @@
                    (replace-regexp-in-string orig replace mode-list-str t))))
   mode-list-str)
 
-(set-face-attribute 'mode-line nil
-                    :background "gray10"
-                    :box nil)
-
 (defpowerline major-mode-abbr
   (propertize (abbreviate-mode-list-str (format-mode-line mode-name))))
 
