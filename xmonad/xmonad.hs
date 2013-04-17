@@ -32,7 +32,7 @@ myTerminal = "/usr/bin/urxvt"
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media"] ++ map show [6..9]
+myWorkspaces = ["1:term","2:web","3:code","5:media"] ++ map show [6..9]
 
 
 ------------------------------------------------------------------------
@@ -50,15 +50,8 @@ myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media"] ++ map show [6..9]
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Google-chrome"  --> doShift "2:web"
-    , resource  =? "desktop_window" --> doIgnore
-    , className =? "Galculator"     --> doFloat
-    , className =? "Steam"          --> doFloat
-    , className =? "Gimp"           --> doFloat
-    , resource  =? "gpicview"       --> doFloat
-    , className =? "MPlayer"        --> doFloat
-    , className =? "VirtualBox"     --> doShift "4:vm"
-    , className =? "Xchat"          --> doShift "5:media"
+    [ className =? "chromium"       --> doShift "2:web"
+    , resource  =? "emacs"          --> doShift "3:code"
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 
@@ -145,30 +138,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- That is, take a screenshot of everything you see.
   , ((modMask .|. controlMask .|. shiftMask, xK_p),
      spawn "screenshot")
-
-  -- Mute volume.
-  , ((modMask .|. controlMask, xK_m),
-     spawn "amixer -q set Master toggle")
-
-  -- Decrease volume.
-  , ((modMask .|. controlMask, xK_j),
-     spawn "amixer -q set Master 10%-")
-
-  -- Increase volume.
-  , ((modMask .|. controlMask, xK_k),
-     spawn "amixer -q set Master 10%+")
-
-  -- Audio previous.
-  , ((0, 0x1008FF16),
-     spawn "")
-
-  -- Play/pause.
-  , ((0, 0x1008FF14),
-     spawn "")
-
-  -- Audio next.
-  , ((0, 0x1008FF17),
-     spawn "")
 
   -- Eject CD tray.
   , ((0, 0x1008FF2C),
@@ -271,7 +240,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- MacBook fn keys
   [((0, xF86XK_MonBrightnessUp), spawn "xbacklight +10"),
-   ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -10")]
+   ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -10"),
+
+   ((0, xF86XK_AudioMute), spawn "amixer sset Master,0 toggle"),
+   ((0, xF86XK_AudioLowerVolume), spawn "amixer sset Master,0 3dB-"),
+   ((0, xF86XK_AudioRaiseVolume), spawn "amixer sset Master,0 3dB+"),
+
+   ((0, xF86XK_AudioPrev), spawn "mpc prev")
+   ((0, xF86XK_AudioNext), spawn "mpc next")
+   ((0, xF86XK_AudioPlay), spawn "mpc toggle")]
 
 
 ------------------------------------------------------------------------
