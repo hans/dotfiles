@@ -1,6 +1,10 @@
 # Load .Xresources
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
+# Clipboard
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
+
 # Colemak
 setxkbmap us && xmodmap ~/.colemak/xmodmap/xmodmap.colemak && xset r 66
 
