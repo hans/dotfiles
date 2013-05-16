@@ -16,6 +16,3 @@ xbacklight -set 15
 
 # Xmonad
 exec xmonad
-
-# Background
-feh --bg-scale ~/Pictures/background/clojure.jpeg
