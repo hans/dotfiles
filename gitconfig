@@ -12,6 +12,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	editor = emacsclient
+	autocrlf = input
 [mirror]
 	summary = true
 [github]
