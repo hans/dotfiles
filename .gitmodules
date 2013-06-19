@@ -31,3 +31,6 @@
 [submodule "emacs.d/vendor/powerline"]
 	path = emacs.d/vendor/powerline
 	url = git://github.com/milkypostman/powerline.git
+[submodule "emacs.d/vendor/multiple-cursors"]
+	path = emacs.d/vendor/multiple-cursors
+	url = https://github.com/magnars/multiple-cursors.el
