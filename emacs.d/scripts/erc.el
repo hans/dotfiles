@@ -20,13 +20,6 @@
  ;; auto-reconnect
  erc-server-auto-reconnect t
 
- ;; track channels
- erc-track-mode t
-
- ;; don't track JOIN, NICK, PART, QUIT, or MODE
- erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
-                           "324" "329" "332" "333" "353" "457")
-
  ;; log
  erc-log-channels t
  erc-log-channels-directory "~/.irclogs"
