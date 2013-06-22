@@ -7,11 +7,12 @@
 
 	    ;; Disable electric-indent-mode in Org buffers
 	    (set (make-local-variable 'electric-indent-functions)
-		 (list (lambda (arg) 'no-indent)))
+           (list (lambda (arg) 'no-indent)))
 
 	    (add-to-list 'org-export-latex-packages-alist '("" "minted"))
 
 	    (org-mode-reftex-setup)))
+
 
 (setq org-directory "~/org/"
       org-default-notes-file (concat org-directory "notes.org")
@@ -27,6 +28,10 @@
       org-export-latex-listings 'minted
       org-export-latex-minted-options '(("frame" "lines") ("fontsize" "\\footnotesize")
                                         ("linenos" ""))
+
+      ;; LaTeX previews
+      org-format-latex-options
+        (plist-put org-format-latex-options :background "White")
 
       org-babel-confirm-evaluate nil
 
@@ -57,6 +62,7 @@ footer a:hover { color: #aaa; }
       ;; Be sure to set `org-export-html-postamble-format' so that the below
       ;; setting is worth it!
       org-export-html-postamble t)
+
 
 (define-key global-map (kbd "C-c c") 'org-capture)
 
