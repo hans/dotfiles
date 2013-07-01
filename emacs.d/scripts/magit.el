@@ -1,5 +1,7 @@
 ;;; It's Magit! An Emacs mode for Git.
 
+(require 'magit)
+
 (add-hook 'magit-mode-hook (lambda () (setq yas/dont-activate t)))
 
 ;; ignore whitespace
