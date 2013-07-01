@@ -46,3 +46,9 @@
 
      (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
      (define-key magit-status-mode-map (kbd "W") 'magit-toggle-whitespace)))
+
+;; Doesn't exactly belong here..
+
+(require 'git-messenger)
+(setq git-messenger:show-detail t)
+(global-set-key (kbd "C-x v p") #'git-messenger:popup-message)
