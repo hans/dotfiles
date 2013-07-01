@@ -2,9 +2,17 @@
 -- Author: Vic Fryzel
 -- http://github.com/vicfryzel/xmonad-config
 
+import Control.Applicative
+import Control.Monad.Writer
+import Data.List
+import Data.Maybe
+import Data.Traversable (traverse)
+import Graphics.X11.Xinerama
 import System.IO
 import System.Exit
 import XMonad
+import XMonad.Actions.SpawnOn
+import XMonad.Actions.TopicSpace
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
@@ -246,8 +254,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
    ((0, xF86XK_AudioLowerVolume), spawn "amixer sset Master,0 3dB-"),
    ((0, xF86XK_AudioRaiseVolume), spawn "amixer sset Master,0 3dB+"),
 
-   ((0, xF86XK_AudioPrev), spawn "mpc prev")
-   ((0, xF86XK_AudioNext), spawn "mpc next")
+   ((0, xF86XK_AudioPrev), spawn "mpc prev"),
+   ((0, xF86XK_AudioNext), spawn "mpc next"),
    ((0, xF86XK_AudioPlay), spawn "mpc toggle")]
 
 
@@ -287,6 +295,80 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 -- > logHook = dynamicLogDzen
 --
 
+-- Support for per-screen xmobars stolen from
+-- http://www.haskell.org/haskellwiki/Xmonad/Config_archive/adamvo%27s_xmonad.hs
+
+getScreens :: IO [Int]
+getScreens = openDisplay "" >>= liftA2 (<*) f closeDisplay
+    where f = fmap (zipWith const [0..]) . getScreenInfo
+
+multiPP :: PP -> PP -> [Handle] -> X ()
+multiPP = multiPP' dynamicLogString
+
+multiPP' :: (PP -> X String) -> PP -> PP -> [Handle] -> X ()
+multiPP' dynlStr focusPP unfocusPP handles = do
+    state <- get
+    let pickPP :: WorkspaceId -> WriterT (Last XState) X String
+        pickPP ws = do
+            let isFoc = (ws ==) . W.tag . W.workspace . W.current $ windowset state
+            put state { windowset = W.view ws $ windowset state }
+            out <- lift $ dynlStr $ if isFoc then focusPP else unfocusPP
+            when isFoc $ get >>= tell . Last . Just
+            return out
+
+    traverse put . getLast
+        =<< execWriterT . (io . zipWithM_ hPutStrLn handles <=< mapM pickPP) . catMaybes
+        =<< mapM screenWorkspace (zipWith const [0..] handles)
+    return ()
+
+mergePPOutputs :: [PP -> X String] -> PP -> X String
+mergePPOutputs x pp = fmap (intercalate (ppSep pp)) . sequence . sequence x $ pp
+
+onlyTitle :: PP -> PP
+onlyTitle pp = defaultPP { ppCurrent = const ""
+                         , ppHidden = const ""
+                         , ppVisible = const ""
+                         , ppLayout = ppLayout pp
+                         , ppTitle = ppTitle pp }
+
+xmobarScreen :: Int -> IO Handle
+xmobarScreen = spawnPipe . ("/usr/bin/xmobar ~/.xmonad/xmobar.hs -x " ++) . show
+
+myPP :: PP
+myPP = xmobarPP { -- ppOutput = hPutStrLn xmproc
+                  ppTitle = xmobarColor xmobarTitleColor "" . shorten 100
+                , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
+                , ppSep = "   " }
+
+------------------------------------------------------------------------
+-- TopicSpace config
+
+myTopics :: [Topic]
+myTopics =
+  [ "term",
+    "web",
+    "code",
+    "media" ]
+
+myTopicConfig = TopicConfig
+    { topicDirs = M.fromList $
+          [ ("term", "./"),
+            ("web", "./"),
+            ("code", "Projects"),
+            ("media", "./")]
+    , defaultTopic = "term"
+    , defaultTopicAction = const $ spawnShell >*> 2
+    , topicActions = M.fromList $
+          [ ("web", spawnHere "chromium"),
+            ("code", spawnHere "emacs")
+          ]
+    }
+
+spawnShell = currentTopicDir myTopicConfig >>= spawnShellIn
+
+spawnShellIn dir = do
+    t <- asks (terminal . config)
+    spawnHere $ "cd " ++ dir ++ " && " ++ t
 
 ------------------------------------------------------------------------
 -- Startup hook
@@ -301,17 +383,21 @@ myStartupHook = return ()
 ------------------------------------------------------------------------
 -- Run xmonad with all the defaults we set up.
 --
+
+myConfig hs = defaults {
+    logHook = do
+        multiPP'
+            (mergePPOutputs [XMonad.Actions.TopicSpace.pprWindowSet myTopicConfig,
+                             dynamicLogString . onlyTitle])
+            myPP
+            myPP { ppTitle = const "" }
+            hs
+    , manageHook = manageDocks <+> myManageHook
+    , startupHook = setWMName "LG3D"
+}
+
 main = do
-  xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobar.hs"
-  xmonad $ defaults {
-      logHook = dynamicLogWithPP $ xmobarPP {
-            ppOutput = hPutStrLn xmproc
-          , ppTitle = xmobarColor xmobarTitleColor "" . shorten 100
-          , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
-          , ppSep = "   "}
-      , manageHook = manageDocks <+> myManageHook
-      , startupHook = setWMName "LG3D"
-  }
+    xmonad . myConfig =<< mapM xmobarScreen =<< getScreens
 
 
 ------------------------------------------------------------------------
