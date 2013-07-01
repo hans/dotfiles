@@ -75,6 +75,14 @@
 ;; Toggle between single and double quotes
 (global-set-key (kbd "C-\"") 'toggle-quotes)
 
+;; Open lines above and below
+(global-set-key (kbd "<C-return>") 'open-line-below)
+(global-set-key (kbd "<C-S-return>") 'open-line-above)
+
+;; Zap
+(global-set-key (kbd "C-z") 'zap-up-to-char)
+(global-set-key (kbd "C-S-z") 'zap-to-char)
+
 ;; --- Text navigation -- ;;
 
 ;; Navigate by paragraph
@@ -106,7 +114,7 @@
 (global-set-key (kbd "C-j") 'imenu)
 
 ;; jump to line (I don't use screen recentering)
-(global-set-key (kbd "C-l") 'goto-line)
+(global-set-key (kbd "C-l") 'goto-line-with-feedback)
 
 ;; jump to head chars
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)

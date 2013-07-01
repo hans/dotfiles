@@ -157,8 +157,31 @@ point."
 
 (defun delete-this-file ()
   "Delete the file displayed in the current buffer."
+  (interactive)
   (delete-file (buffer-file-name))
   (kill-this-buffer))
+
+(defun goto-line-with-feedback ()
+  "Show line numbers temporarily, while prompting for the line number input"
+  (interactive)
+  (unwind-protect
+      (progn
+        (linum-mode 1)
+        (call-interactively 'goto-line))
+    (linum-mode -1)))
+
+(defun open-line-below ()
+  (interactive)
+  (end-of-line)
+  (newline)
+  (indent-for-tab-command))
+
+(defun open-line-above ()
+  (interactive)
+  (beginning-of-line)
+  (newline)
+  (forward-line -1)
+  (indent-for-tab-command))
 
 ;; Toggle between single and double quotes in the string at point.
 ;; Thanks https://github.com/magnars/.emacs.d/blob/master/defuns/editing-defuns.el
