@@ -1,10 +1,25 @@
 ;;; It's Magit! An Emacs mode for Git.
 
-(add-hook
- 'magit-mode-hook
- (lambda ()
-   (setq yas/dont-activate t)
-   ))
+(add-hook 'magit-mode-hook (lambda () (setq yas/dont-activate t)))
+
+;; ignore whitespace
+;; https://github.com/magnars/.emacs.d/blob/master/setup-magit.el
+
+(defun magit-toggle-whitespace ()
+  (interactive)
+  (if (member "-w" magit-diff-options)
+      (magit-dont-ignore-whitespace)
+    (magit-ignore-whitespace)))
+
+(defun magit-ignore-whitespace ()
+  (interactive)
+  (add-to-list 'magit-diff-options "-w")
+  (magit-refresh))
+
+(defun magit-dont-ignore-whitespace ()
+  (interactive)
+  (setq magit-diff-options (remove "-w" magit-diff-options))
+  (magit-refresh))
 
 (eval-after-load 'magit
   '(progn
@@ -30,4 +45,10 @@
        (jump-to-register :magit-fullscreen))
 
      (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
-     ))
+     (define-key magit-status-mode-map (kbd "W") 'magit-toggle-whitespace)))
+
+;; Doesn't exactly belong here..
+
+(require 'git-messenger)
+(setq git-messenger:show-detail t)
+(global-set-key (kbd "C-x v p") #'git-messenger:popup-message)
