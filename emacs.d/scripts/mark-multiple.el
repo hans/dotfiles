@@ -1,7 +1,7 @@
 ;; Mark repeated code, like variable names, very quickly.
 ;; See http://www.youtube.com/watch?v=r2o9HYi7DOY
 
-(load "multiple-cursors/multiple-cursors")
+(vendor 'multiple-cursors)
 
 ;; Nice hotkeys
 
