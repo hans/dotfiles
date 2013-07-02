@@ -53,6 +53,7 @@
 
 ;; Cycle through buffers
 (global-set-key (kbd "<C-tab>") 'bury-buffer)
+(global-set-key (kbd "<C-S-tab>") 'unbury-buffer)
 
 ;; --- Text manipulation --- ;;
 
