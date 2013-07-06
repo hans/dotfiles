@@ -1,5 +1,10 @@
-;;; Snippets make typing fun
+;;; yasnippet -- Snippets make typing fun
 
+;;; Commentary:
+
+;;; Code:
+
+(require 'yasnippet)
 (require 'dropdown-list)
 
 (yas/initialize)
@@ -14,3 +19,6 @@
 (add-hook 'yas/minor-mode-hook
           (lambda () (define-key yas/minor-mode-map
                        (kbd "TAB") 'smart-tab))) ; was yas/expand
+
+(provide 'yasnippet)
+;;; yasnippet.el ends here
