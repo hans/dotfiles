@@ -1,5 +1,8 @@
 ;;; Personal functions
 
+(require 'dash)
+(require 's)
+
 ;; Thanks http://thorne.posterous.com/load-a-directory-full-of-emacs-lisp-files-in
 (defvar file-loadable-regexp
   (replace-regexp-in-string "\\." "\\\\."
@@ -222,7 +225,25 @@ point."
 (defun recompile-config ()
   "Recompile Emacs config files"
   (interactive)
-  (byte-recompile-directory config-directory 0))
+
+  (let* ((avoid '(".." "auto-save-list" "backups" "elpa"))
+	 (files (directory-files-and-attributes config-directory))
+         (targets (--filter (and (not (-contains? avoid (car it)))
+				 (or
+				  ;; is valid directory
+				  (eq t (cadr it))
+
+				  ;; is .el file
+				  (s-ends-with? ".el" (car it)))) ;; .el file
+                            files))
+	 (clean (--map (cons (expand-file-name (car it) config-directory)
+			     (cadr it))
+		       targets)))
+
+    (--each clean
+      (if (eq t (cdr it))
+	  (byte-recompile-directory (car it))
+	(byte-recompile-file (car it))))))
 
 ;; Thanks http://www.masteringemacs.org/articles/2010/12/22/fixing-mark-commands-transient-mark-mode/
 (defun push-mark-no-activate ()
