@@ -20,7 +20,7 @@
     yasnippet-bundle j-mode ace-jump-mode expand-region
     zenburn-theme ido-ubiquitous smooth-scroll perspective
     python-mode go-mode nrepl color-theme-solarized git-messenger
-    flycheck)
+    flycheck multiple-cursors)
   "Packages which should be installed upon launch")
 
 (dolist (p required-packages)
