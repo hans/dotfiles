@@ -14,7 +14,8 @@
   (package-refresh-contents))
 
 (defvar required-packages
-  '(s dash popup clojure-mode coffee-mode color-theme haml-mode
+  '(s dash rfringe popup php-mode mmm-mode js2-mode sml-mode
+    ob-sml clojure-mode coffee-mode color-theme haml-mode
     ack-and-a-half haskell-mode magit markdown-mode mustache-mode
     notify paredit scala-mode yaml-mode yasnippet
     yasnippet-bundle j-mode ace-jump-mode expand-region

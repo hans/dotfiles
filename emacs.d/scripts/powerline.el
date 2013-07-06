@@ -1,4 +1,3 @@
-(add-to-list 'load-path "~/.emacs.d/vendor/powerline")
 (require 'powerline)
 (require 'cl)
 

@@ -11,8 +11,6 @@
                       "clearInterval" "location" "console" "_"
                       "jQuery" "$"))
 
-(load "js2-mode/js2-mode")
-(load "js2-mode/js2-imenu-extras")
 (require 'js2-mode)
 (require 'js2-imenu-extras)
 

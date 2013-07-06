@@ -1,36 +1,15 @@
-[submodule "emacs.d/vendor/color-theme-n0tch2k"]
-	path = emacs.d/vendor/color-theme-n0tch2k
-	url = https://github.com/hans/color-theme-n0tch2k.git
-[submodule "emacs.d/vendor/mark-multiple"]
-	path = emacs.d/vendor/mark-multiple
-	url = https://github.com/magnars/mark-multiple.el.git
-[submodule "emacs.d/vendor/php-mode"]
-	path = emacs.d/vendor/php-mode
-	url = https://github.com/ejmr/php-mode.git
 [submodule "zsh/zsh-syntax-highlighting"]
 	path = zsh/zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "emacs.d/vendor/pretty-mode"]
 	path = emacs.d/vendor/pretty-mode
 	url = https://github.com/hans/pretty-mode.git
-[submodule "emacs.d/vendor/mmm-mode"]
-	path = emacs.d/vendor/mmm-mode
-	url = git://github.com/purcell/mmm-mode.git
 [submodule "emacs.d/snippets/js-mode"]
 	path = emacs.d/snippets/js-mode
 	url = git@github.com:hans/yasnippet-js-mode.git
 [submodule "emacs.d/snippets/coffee-mode"]
 	path = emacs.d/snippets/coffee-mode
 	url = git@github.com:hans/yasnippet-coffee-mode.git
-[submodule "emacs.d/vendor/js2-mode"]
-	path = emacs.d/vendor/js2-mode
-	url = git://github.com/mooz/js2-mode.git
 [submodule "emacs.d/vendor/gaeunit-mode"]
 	path = emacs.d/vendor/gaeunit-mode
 	url = git@github.com:hans/gaeunit-mode.git
-[submodule "emacs.d/vendor/powerline"]
-	path = emacs.d/vendor/powerline
-	url = git://github.com/milkypostman/powerline.git
-[submodule "emacs.d/vendor/multiple-cursors"]
-	path = emacs.d/vendor/multiple-cursors
-	url = https://github.com/magnars/multiple-cursors.el
