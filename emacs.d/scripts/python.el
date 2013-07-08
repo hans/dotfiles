@@ -18,3 +18,10 @@
   (let ((py-shell-name "ipython")
         (py-python-command-args '("-i" "--colors=LightBG")))
     (py-shell)))
+
+(add-hook 'python-mode-hook
+          (lambda ()
+            (make-local-variable 'fill-column)
+            (set 'fill-column 72)))
+
+(provide 'python)
