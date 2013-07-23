@@ -39,4 +39,7 @@ insert_sudo() { BUFFER="sudo $BUFFER"; zle end-of-line }          # pressing alt
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
+
 source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh   # syntax highlighting!
