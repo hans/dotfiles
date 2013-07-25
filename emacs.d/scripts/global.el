@@ -127,3 +127,8 @@
 
 ;; Enable forward-word / backward-word navigation in camelCased words
 (global-subword-mode 1)
+
+;; Global Projectile
+(require 'projectile)
+(setq projectile-enable-caching t)
+(projectile-global-mode)
