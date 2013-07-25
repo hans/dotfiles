@@ -1,5 +1,6 @@
 ;;; Interactive do, find-file and iswitchb replacement with fuzzy/flex matching.
 
+(require 'flx-ido)
 (ido-mode t)
 (setq ido-enable-prefix nil
       ido-enable-flex-matching t
@@ -9,3 +10,5 @@
 
 (require 'ido-ubiquitous)
 (ido-ubiquitous-mode 1)
+
+(flx-ido-mode 1)
