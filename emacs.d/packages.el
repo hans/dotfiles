@@ -19,7 +19,7 @@
     ack-and-a-half haskell-mode magit markdown-mode mustache-mode
     notify paredit scala-mode yaml-mode yasnippet
     yasnippet-bundle j-mode ace-jump-mode expand-region
-    zenburn-theme ido-ubiquitous smooth-scroll perspective
+    zenburn-theme ido-ubiquitous smooth-scroll
     python-mode go-mode nrepl color-theme-solarized git-messenger
     flycheck multiple-cursors powerline projectile)
   "Packages which should be installed upon launch")
