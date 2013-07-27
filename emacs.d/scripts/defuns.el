@@ -3,6 +3,9 @@
 (require 'dash)
 (require 's)
 
+(require 'ido)
+(require 'projectile)
+
 ;; Thanks http://thorne.posterous.com/load-a-directory-full-of-emacs-lisp-files-in
 (defvar file-loadable-regexp
   (replace-regexp-in-string "\\." "\\\\."
@@ -273,3 +276,11 @@ point."
   (set-frame-parameter
    nil 'fullscreen
    (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+
+(defun find-file-custom (arg)
+  "Try to find a file with Projectile first, and default to general ido."
+
+  (interactive "P")
+  (condition-case nil
+      (projectile-find-file arg)
+    (error (ido-find-file))))

@@ -2,6 +2,10 @@
 
 ;; --- File navigation --- ;;
 
+;; Default to projectile file opening
+(global-set-key (kbd "C-x C-f") 'find-file-custom)
+(global-set-key (kbd "C-x C-g") 'ido-find-file)
+
 ;; Find stuff
 (global-set-key [(f2)]              'ack-and-a-half)
 (global-set-key [(control f2)]      'ack-and-a-half-same)
