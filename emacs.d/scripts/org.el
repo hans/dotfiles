@@ -11,7 +11,29 @@
 
 	    (add-to-list 'org-export-latex-packages-alist '("" "minted"))
 
-	    (org-mode-reftex-setup)))
+      (add-to-list 'org-latex-classes
+                   '("ieee"
+                     "\\usepackage{IEEEconf,IEEEtran} \\documentclass[12pt,journal]{IEEEtran}"
+                     ("\\section{%s}" . "\\section*{%s}")
+                     ("\\subsection{%s}" . "\\subsection*{%s}")
+                     ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                     ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                     ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+	    (org-mode-reftex-setup)
+
+      ;; Pretend that latex environments are just paragraphs while
+      ;; filling
+      (defadvice org-element-type (after org-element-type-latex-fix
+                                         'disable)
+        (when (eq 'latex-environment ad-return-value)
+          (setq ad-return-value 'paragraph)))
+      (defadvice org-fill-paragraph (around org-fill-paragraph-with-latex)
+        (ad-enable-advice 'org-element-type 'after
+                          'org-element-type-latex-fix)
+        ad-do-it
+        (ad-disable-advice 'org-element-type 'after
+                           'org-element-type-latex-fix))))
 
 
 (setq org-directory "~/org/"
