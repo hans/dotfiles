@@ -1,13 +1,28 @@
+;;; powerline --
+
+;;; Commentary:
+
+;;; Code:
+
 (require 'powerline)
 (require 'cl)
+(require 's)
+(require 'dash)
 
 (defvar mode-abbr-alist
   '(("Abbrev" . "abbr")
     ("Clojure" . "clj")
+    ("Coffee" . "cof")
+    ("CoS" . "cos")
+    ("CSS" . "css")
     ("Emacs-Lisp" . "el")
     ("FlyC" . "fc")
     ("FlyC?" . "fc?")
-    ("JavaScript-IDE" . "js")
+    ("Fundamental" . "fun")
+    ("HTML" . "html")
+    ("Image" . "img")
+    ("Javascript" . "js")
+    ("JavaScript-IDE" . "jsi")
     ("Lisp Interaction" . "lisp")
     ("Magit" . "git")
     ("Markdown" . "md")
@@ -18,6 +33,16 @@
     ("Python" . "py")
     ("RE Builder" . "re")
     ("Shell-script" . "sh")))
+
+(defvar git-mode-line-name-abbreviations
+  '(("Git:" . "g:")
+    ("Git-" . "g-")
+    (":master" . ":m")
+    ("-master" . "-m")
+    ("-develop" . "-dev")
+    ("feature/" . "f/")
+    ("hotfix/" . "h/")
+    ("release/" . "release/")))
 
 (defun abbreviate-mode-list-str (mode-list-str)
   (loop for pair in mode-abbr-alist
@@ -35,14 +60,11 @@
                "^ *" ""
                (abbreviate-mode-list-str (format-mode-line minor-mode-alist)))))
 
-(defpowerline perspective
-  (propertize
-   (if persp-curr
-       (concat "("
-               (substring (persp-name persp-curr) 0 2)
-               ")")
-     "")
-   'face (powerline-make-face 'powerline-active1)))
+(defadvice vc-git-mode-line-string (after abbreviate-git-names)
+  (setq ad-return-value
+        (--reduce-from (s-replace (car it) (cdr it) acc)
+                       ad-return-value
+                       git-mode-line-name-abbreviations)))
 
 ;; Setup powerline theme
 (setq-default mode-line-format
