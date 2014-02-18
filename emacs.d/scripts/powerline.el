@@ -11,6 +11,8 @@
 
 (defvar mode-abbr-alist
   '(("Abbrev" . "abbr")
+    ("Assembler" . "asm")
+    ("C" . "c")
     ("Clojure" . "clj")
     ("Coffee" . "cof")
     ("CoS" . "cos")
