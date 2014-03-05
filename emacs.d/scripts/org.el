@@ -1,4 +1,5 @@
 (require 'org)
+(require 'org-latex)
 (load-library "reftex")
 
 (add-hook 'org-mode-hook
@@ -9,7 +10,7 @@
 	    (set (make-local-variable 'electric-indent-functions)
            (list (lambda (arg) 'no-indent)))
 
-	    (add-to-list 'org-export-latex-packages-alist '("" "minted"))
+	    ;; (add-to-list 'org-export-latex-packages-alist '("" "minted"))
 
       (add-to-list 'org-latex-classes
                    '("ieee"
@@ -137,8 +138,8 @@ footer a:hover { color: #aaa; }
     (with-temp-file texfile
       (insert (org-splice-latex-header
 	       org-format-latex-header
-	       org-export-latex-default-packages-alist
-	       org-export-latex-packages-alist t
+	       ;; org-export-latex-default-packages-alist
+	       ;; org-export-latex-packages-alist t
 	       org-format-latex-header-extra))
       (insert "\n\\begin{document}\n" string "\n\\end{document}\n")
       (require 'org-latex)
