@@ -44,7 +44,7 @@
       org-src-fontify-natively t
 
       ;; Org manual 11.7.1
-      org-pretty-entities t
+      org-pretty-entities nil
       org-entities-user
         '(("implies" "\\implies" t "&rArr;" "=>" "=>" "⇒"))
 
