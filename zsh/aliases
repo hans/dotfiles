@@ -98,3 +98,9 @@ alias gaed='dev_appserver.py .'
 alias gaer='remote_api_shell.py'
 alias gaeu='appcfg.py --oauth2 update .'
 alias gaeua='appcfg.py --oauth2 -V dev update . && appcfg.py --oauth2 update . -V'
+
+##### stanford #####
+alias myth='ssh myth.stanford.edu'
+alias corn='ssh corn.stanford.edu'
+alias farmshare="cd /farmshare/user_data/$USER"
+alias myq="qstat -u $USER"
