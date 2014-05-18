@@ -44,6 +44,9 @@ alias untbz='tar -jxvf'
 alias iwcfg='iwconfig'
 alias ifcfg='ifconfig'
 
+#### convert to decimal ####
+alias 2d='printf "%d\n" '
+
 #### more typing saved with global aliases ####
 alias -g .lc="| wc -l"	    # line count
 alias -g .dn="2>&1 > /dev/null"
