@@ -16,8 +16,7 @@
 (setq color-theme-is-global t)
 (setq color-theme-is-cumulative t)
 
-(require 'color-theme-solarized)
-(color-theme-solarized 'dark)
+(load-theme 'solarized-dark t)
 
 ;; (vendor 'color-theme-railscasts)
 ;; (color-theme-railscasts)

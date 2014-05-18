@@ -20,7 +20,7 @@
     notify paredit scala-mode yaml-mode yasnippet
     yasnippet-bundle j-mode ace-jump-mode expand-region
     zenburn-theme ido-ubiquitous smooth-scroll flx-ido
-    python-mode go-mode nrepl color-theme-solarized git-messenger
+    python-mode go-mode nrepl solarized-theme git-messenger
     flycheck multiple-cursors powerline projectile)
   "Packages which should be installed upon launch")
 
