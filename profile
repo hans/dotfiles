@@ -22,3 +22,4 @@ export LANG=en_US.UTF-8
 export CVS_RSH=ssh
 
 export EDITOR=emacsclient
+export ALTERNATE_EDITOR=vim
