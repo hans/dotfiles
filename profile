@@ -11,6 +11,9 @@ fi
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
+# perlbrew
+source ~/perl5/perlbrew/etc/bashrc
+
 # CUDA, Cabal, Python binaries
 export PATH=/usr/local/share/python:$PATH:~/.cabal/bin:/usr/local/cuda/bin
 
