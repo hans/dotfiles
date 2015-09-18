@@ -7,3 +7,8 @@ set smarttab
 set autoindent
 set softtabstop=4
 set shiftwidth=4
+
+" Octave syntax 
+augroup filetypedetect 
+au! BufRead,BufNewFile *.m,*.oct set filetype=octave 
+augroup END
