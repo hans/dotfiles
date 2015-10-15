@@ -104,4 +104,9 @@ alias myth='ssh myth.stanford.edu'
 alias corn='ssh corn.stanford.edu'
 alias jamie='ssh jamie.stanford.edu'
 alias farmshare="cd /farmshare/user_data/$USER"
-alias myq="qstat -u $USER"
+alias myq="qstat -nu $USER"
+
+#### stanford nlp ####
+if [ -e "/afs/cs.stanford.edu" ]; then
+    alias qsub="qsub -q nlp"
+fi
