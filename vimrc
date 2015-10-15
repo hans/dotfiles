@@ -7,3 +7,4 @@ set smarttab
 set autoindent
 set softtabstop=4
 set shiftwidth=4
+set expandtab
