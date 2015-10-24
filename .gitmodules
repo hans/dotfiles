@@ -13,3 +13,6 @@
 [submodule "emacs.d/vendor/gaeunit-mode"]
 	path = emacs.d/vendor/gaeunit-mode
 	url = git@github.com:hans/gaeunit-mode.git
+[submodule "vim"]
+	path = vim
+	url = https://github.com/joom/vim-starter.git
