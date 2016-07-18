@@ -110,3 +110,5 @@ alias myq="qstat -nu $USER"
 if [ -e "/afs/cs.stanford.edu" ]; then
     alias qsub="qsub -q nlp"
 fi
+
+source ~/.zsh/local_aliases
