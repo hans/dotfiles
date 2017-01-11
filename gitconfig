@@ -5,6 +5,7 @@
 	whitespace = nowarn
 [alias]
 	co = checkout
+	lastchange = log -p --follow -n 1
 [color]
 	diff = auto
 	status = auto
