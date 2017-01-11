@@ -25,3 +25,5 @@ export CVS_RSH=ssh
 
 export EDITOR=emacsclient
 export ALTERNATE_EDITOR=vim
+
+umask 002

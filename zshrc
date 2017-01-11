@@ -13,7 +13,7 @@ prompt walters
 export PROMPT=" ⚛ >  "                                             # atom-symbol prompt to mix with Walters' PWD display on the right
 
 autoload -Uz compinit                                             # tab completion
-compinit
+compinit -u
 
 setopt BRACE_CCL                                                  # http://stackoverflow.com/questions/2394728
 setopt CORRECT                                                    # correct command spellings
