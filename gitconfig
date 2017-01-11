@@ -1,6 +1,6 @@
 [user]
 	name = Jon Gauthier
-	email = jgauthie@stanford.edu
+	email = jon@gauthiers.net
 [apply]
 	whitespace = nowarn
 [alias]
@@ -11,7 +11,7 @@
 	branch = auto
 [core]
 	excludesfile = ~/.gitignore
-	editor = emacsclient
+	editor = vim
 	autocrlf = input
 [mirror]
 	summary = true

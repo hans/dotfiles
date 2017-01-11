@@ -41,5 +41,6 @@ bindkey "^[s" insert-sudo
 
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
+bindkey -e                                                        # ctrl-a, ctrl-e
 
 source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh   # syntax highlighting!
