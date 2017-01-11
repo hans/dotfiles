@@ -22,3 +22,5 @@ export LANG=en_US.UTF-8
 export CVS_RSH=ssh
 
 export EDITOR=vim
+
+umask 002
