@@ -5,6 +5,7 @@
 	whitespace = nowarn
 [alias]
 	co = checkout
+	lastchange = log -p --follow -n 1
 [color]
 	diff = auto
 	status = auto
@@ -17,3 +18,7 @@
 	summary = true
 [github]
 	user = hans
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true

@@ -84,7 +84,7 @@ alias ra='racket -il readline'
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 
 ##### HTTP server ######
-alias http="python -m SimpleHTTPServer"
+alias http="python3 -m http.server || python2 -m SimpleHTTPServer"
 
 ##### name iTerm tab #####
 alias nt='nametab'
