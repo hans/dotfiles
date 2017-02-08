@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+# SSH to a free john machine.
+first_mstat=`/u/nlp/bin/mstat -l | grep john | head -n1`
+machine=`echo "$first_mstat" | awk '{print $1}'`
+
+echo "Putting you on $machine. Stats:"
+echo "$first_mstat"
+
+ssh $machine
