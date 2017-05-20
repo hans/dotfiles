@@ -5,5 +5,5 @@
 	path = vim
 	url = https://github.com/joom/vim-starter.git
 [submodule ".tmux"]
-	path = .tmux
+	path = tmux
 	url = https://github.com/gpakosz/.tmux.git
