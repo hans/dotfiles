@@ -25,6 +25,7 @@ Plugin 'ervandew/supertab'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'gcmt/wildfire.vim'
 Plugin 'Yggdroot/indentLine'
+Plugin 'tpope/vim-sleuth'
 
 "Front End
 Plugin 'pangloss/vim-javascript'
