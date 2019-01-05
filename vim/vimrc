@@ -6,26 +6,27 @@ Plugin 'gmarik/vundle'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
-Plugin 'bkad/CamelCaseMotion'
+" Plugin 'bkad/CamelCaseMotion'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kristijanhusak/vim-multiple-cursors'
 Plugin 'joom/vim-commentary'
-Plugin 'vim-scripts/Align'
+" Plugin 'vim-scripts/Align'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'wesQ3/vim-windowswap'
+" Plugin 'wesQ3/vim-windowswap'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
 Plugin 'ervandew/supertab'
 Plugin 'ConradIrwin/vim-bracketed-paste'
-Plugin 'gcmt/wildfire.vim'
+" Plugin 'gcmt/wildfire.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tpope/vim-sleuth'
+Plugin 'qpkorr/vim-buffkil'
 
 "Front End
 Plugin 'pangloss/vim-javascript'
@@ -46,7 +47,6 @@ au BufNewFile,BufRead *.cuh set ft=cuda
 set backspace=2
 
 " Plugin Settings {{{
-let g:windowswap_map_keys = 0 "prevent default bindings
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|.class'
 " }}}
 
@@ -132,6 +132,9 @@ set noswapfile
 set nobackup
 set number
 set linespace=3
+
+" Align function arguments across lines
+set cino+=(0
 
 " Remove trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
