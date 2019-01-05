@@ -2,9 +2,7 @@
 
 # Quickly cd to a project directory and set up.
 
-cd ~/scr/projects/$1
+cd ~/projects/$1
 
-# Set up virtualenv; fail quietly
-source env/bin/activate 2>/dev/null \
-	|| source .env/bin/activate 2>/dev/null \
-	|| source activate jon-common
+# Set up conda
+source activate default

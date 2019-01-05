@@ -105,7 +105,6 @@ alias myth='ssh myth.stanford.edu'
 alias corn='ssh corn.stanford.edu'
 alias jamie='ssh jamie.stanford.edu'
 alias farmshare="cd /farmshare/user_data/$USER"
-alias myq="qstat -nu $USER"
 
 #### stanford nlp ####
 if [ -e "/afs/cs.stanford.edu" ]; then
@@ -114,5 +113,14 @@ fi
 
 #### linux ####
 alias open=xdg-open
+
+##### mit om #####
+alias si='srun --pty -t 3-0 --qos=cpl zsh'
+alias sib='srun --pty -t 3-0 --mem=16384 --qos=cpl zsh'
+alias sig='srun --pty -t 3-0 --mem=16384 --qos=cpl --gres=gpu:tesla-k80:1 zsh'
+alias sq='squeue -u $USER'
+
+##### cuda #####
+alias mygpu='nvidia-smi --id=$CUDA_VISIBLE_DEVICES'
 
 source ~/.zsh/local_aliases
