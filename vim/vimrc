@@ -9,24 +9,25 @@ Plugin 'bling/vim-airline'
 " Plugin 'bkad/CamelCaseMotion'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'kristijanhusak/vim-multiple-cursors'
+" Plugin 'kristijanhusak/vim-multiple-cursors'
 Plugin 'joom/vim-commentary'
 " Plugin 'vim-scripts/Align'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+" Plugin 'garbas/vim-snipmate'
+" Plugin 'honza/vim-snippets'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'jistr/vim-nerdtree-tabs'
+" Plugin 'jistr/vim-nerdtree-tabs'
 " Plugin 'wesQ3/vim-windowswap'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
 Plugin 'ervandew/supertab'
-Plugin 'ConradIrwin/vim-bracketed-paste'
+" Plugin 'ConradIrwin/vim-bracketed-paste'
 " Plugin 'gcmt/wildfire.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tpope/vim-sleuth'
-Plugin 'qpkorr/vim-buffkil'
+Plugin 'qpkorr/vim-bufkill'
+Plugin 'LukeGoodsell/nextflow-vim'
 
 "Front End
 Plugin 'pangloss/vim-javascript'
@@ -52,7 +53,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|.class'
 
 " Airline {{{
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 0 "change 0 to 1 if you have a powerline font
+let g:airline_powerline_fonts = 1 "change 0 to 1 if you have a powerline font
 set laststatus=2
 set t_Co=256
 " }}}
