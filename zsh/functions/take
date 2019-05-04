@@ -1,5 +1,0 @@
-# https://github.com/robbyrussell/oh-my-zsh/raw/master/lib/functions.zsh
-function take() {
-    mkdir -p $1
-    cd $1
-}
