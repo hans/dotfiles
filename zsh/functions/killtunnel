@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# Kill an SSH tunnel active on a particular port.
-function killtunnel() {
-    netstat -lnpt 2>/dev/null | \
-        awk "\$4 ~ /:$1\$/ {sub(/\/.*/, \"\", \$7); print \$7}" | \
-        sort -n | uniq | xargs kill -s KILL
-}
