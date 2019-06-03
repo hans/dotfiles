@@ -4,7 +4,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/vundle'
 
-Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 " Plugin 'bkad/CamelCaseMotion'
 Plugin 'tpope/vim-fugitive'
