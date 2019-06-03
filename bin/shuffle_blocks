@@ -3,19 +3,30 @@
 # Shuffle blocks of stdin, where blocks are separated by newlines.
 # Reads everything into main memory (for better or for worse)..
 
+from argparse import ArgumentParser
 from random import shuffle
 import sys
+
+p = ArgumentParser()
+p.add_argument("-l", "--limit", type=int, default=0)
+p.add_argument("-m", "--maxlen", type=int)
+args = p.parse_args()
 
 blocks = []
 cur_block = []
 for line in sys.stdin:
     if len(line.strip()) == 0:
-        blocks.append(cur_block)
-        cur_block = []
+        if cur_block:
+            if args.maxlen is None or len(cur_block) <= args.maxlen:
+                blocks.append(cur_block)
+            cur_block = []
     else:
         cur_block.append(line.strip())
 
 blocks.append(cur_block)
 shuffle(blocks)
 
-print '\n\n'.join('\n'.join(block) for block in blocks)
+if args.limit > 0:
+    blocks = blocks[:args.limit]
+
+print('\n\n'.join('\n'.join(block) for block in blocks))
